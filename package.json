@@ -7,6 +7,8 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
+    "bourbon": "^4.3.4",
+    "bourbon-neat": "^2.0.0",
     "enzyme": "^2.8.2",
     "node-sass-chokidar": "^0.0.3",
     "npm-run-all": "^4.0.2",
@@ -15,8 +17,8 @@
     "react-test-renderer": "^15.6.1"
   },
   "scripts": {
-    "build-css": "node-sass-chokidar src/ -o src/",
-    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
+    "build-css": "node-sass-chokidar src/ -o src --include-path ./node_modules/bourbon/app/assets/stylesheets --include-path ./node_modules/bourbon-neat/core",
+    "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive --include-path ./node_modules/bourbon/app/assets/stylesheets --include-path ./node_modules/bourbon-neat/core",
     "start-js": "react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "npm run build-css && react-scripts build",
