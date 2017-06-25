@@ -14,7 +14,8 @@
     "npm-run-all": "^4.0.2",
     "react-addons-test-utils": "^15.0.0-rc.2",
     "react-scripts": "1.0.7",
-    "react-test-renderer": "^15.6.1"
+    "react-test-renderer": "^15.6.1",
+    "testdouble": "^3.2.0"
   },
   "scripts": {
     "build-css": "node-sass-chokidar src/ -o src --include-path ./node_modules/bourbon/app/assets/stylesheets --include-path ./node_modules/bourbon-neat/core",
