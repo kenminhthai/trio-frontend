@@ -1,9 +1,9 @@
 .wrap {
-  @include outer-container;
+  @include grid-container();
   width: 100%;
   padding: 0 40px;
 
-  @include media($mobile) {
-    padding: 0 20px;
+  @include grid-media($mobile-grid) {
+    padding: 0 2px;
   }
 }

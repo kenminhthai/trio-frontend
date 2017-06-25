@@ -1,9 +1,22 @@
-// Change the grid settings
-$gutter: em(10);
-$grid-columns: 12;
-$max-width: em(1200);
+// Set the default grid settings (anything above tablet)
+$neat-grid: (
+  columns: 12,
+  gutter: 10px,
+  direction: ltr,
+  max-width: 1200px,
+  media: 1021px,
+);
 
-// Define responsive breakpoints
-$mobile:  new-breakpoint(max-width 640px  $grid-columns);
-$tablet:  new-breakpoint(max-width 1020px $grid-columns);
-$desktop: new-breakpoint(min-width 1021px $grid-columns);
+// Define a grid for tablets (1020px wide and down)
+$tablet-grid: (
+  columns: 12,
+  gutter: 10px,
+  media: "(max-width: 1020px)",
+);
+
+// Define a grid for mobiles (640px wide and down)
+$mobile-grid: (
+  columns: 12,
+  gutter: 12px,
+  media: "(max-width: 640px)",
+);
