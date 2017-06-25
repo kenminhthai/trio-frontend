@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Trio from './Trio';
+import Trio from './components/Trio';
 import registerServiceWorker from './registerServiceWorker';
 
 import './App.css'
