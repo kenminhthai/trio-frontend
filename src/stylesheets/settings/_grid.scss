@@ -1,0 +1,9 @@
+// Change the grid settings
+$gutter: em(10);
+$grid-columns: 12;
+$max-width: em(1200);
+
+// Define responsive breakpoints
+$mobile:  new-breakpoint(max-width 640px  $grid-columns);
+$tablet:  new-breakpoint(max-width 1020px $grid-columns);
+$desktop: new-breakpoint(min-width 1021px $grid-columns);

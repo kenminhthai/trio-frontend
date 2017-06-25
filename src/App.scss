@@ -5,3 +5,27 @@
 // Observe ITCSS
 // https://speakerdeck.com/dafed/managing-css-projects-with-itcss
 // ==========================
+
+// Tools
+@import "./stylesheets/tools/omega-reset";
+
+// Settings
+@import "./stylesheets/settings/fonts";
+@import "./stylesheets/settings/colours";
+@import "./stylesheets/settings/grid";
+
+// Generic
+@import "./stylesheets/generic/resets";
+@import "./stylesheets/generic/wrap";
+
+// Elements
+@import "./stylesheets/elements/buttons";
+@import "./stylesheets/elements/inputs";
+@import "./stylesheets/elements/types";
+@import "./stylesheets/elements/links";
+
+// Objects
+@import "./stylesheets/objects/forms";
+
+// Components
+// Trumps

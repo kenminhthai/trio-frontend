@@ -1,0 +1,9 @@
+.wrap {
+  @include outer-container;
+  width: 100%;
+  padding: 0 40px;
+
+  @include media($mobile) {
+    padding: 0 20px;
+  }
+}
