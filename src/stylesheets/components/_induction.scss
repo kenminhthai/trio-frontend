@@ -3,5 +3,14 @@
   min-height: 100vh;
   max-height: 100vh;
   width: 100%;
-  background: #000;
+  background: $blue;
+
+  article {
+    @include grid-container();
+    @extend .wrap;
+
+    h2 {
+      color: #fff;
+    }
+  }
 }
