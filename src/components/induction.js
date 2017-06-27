@@ -18,7 +18,7 @@ const Induction = () => {
           The easiest way to discover Duolingo Clubs
         </h2>
 
-        <footer>
+        <div className="buttons">
           <button className="btn btn-post-club">
             Post a Club
           </button>
@@ -26,7 +26,7 @@ const Induction = () => {
           <button className="btn discover-clubs">
             Discover Clubs
           </button>
-        </footer>
+        </div>
       </article>
 
       <div className="btn choose-language">
