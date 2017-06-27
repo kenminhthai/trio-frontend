@@ -9,7 +9,7 @@ describe('languageListReducer', () => {
     expect(languagesReducer(state, action)).toEqual([])
   })
 
-  it('returns fetching state on REQUEST_LANGUAGE_LIST', () => {
+  it('returns fetching state on REQUEST_LANGUAGES', () => {
     const state  = undefined
     const action = actions.requestLanguages()
 
@@ -18,7 +18,7 @@ describe('languageListReducer', () => {
     })
   })
 
-  it('returns payloaded state on RECEIVE_LANGUAGE_LIST', () => {
+  it('returns payloaded state on RECEIVE_LANGUAGES', () => {
     const state  = {isFetching: true}
     const action = actions.receiveLanguages("languages")
 
