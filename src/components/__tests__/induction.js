@@ -1,12 +1,20 @@
 import React from 'react'
 import Induction from '../induction'
 import trioLogo from '../../assets/images/brand/trio-logo.svg'
+import duolingoEarth from '../../assets/images/duolingo-earth.svg'
 
 import { mount, shallow } from 'enzyme'
 
 describe('Induction component', () => {
   it('mounts without crashing', () => {
     expect(mount(<Induction />)).toBeTruthy()
+  })
+
+  it('renders the duolingo earth image', () => {
+    const wrapper = shallow(<Induction />)
+    expect(wrapper.containsMatchingElement(
+      <img src={duolingoEarth} alt="" />
+    )).toBe(true)
   })
 
   it('renders the Trio logo', () => {
