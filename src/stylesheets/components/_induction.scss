@@ -120,7 +120,7 @@
     }
 
     &:hover {
-      animation: grow 0.1s ease-out forwards;
+      animation: grow 0.2s ease forwards;
     }
 
     @include grid-media($mobile-grid) {
