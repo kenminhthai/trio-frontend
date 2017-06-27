@@ -100,6 +100,20 @@
       background: $blue url('assets/images/caret-down.svg') 50% 12px no-repeat;
     }
 
+    @keyframes grow {
+      from {
+        @include transform(scale(1));
+      }
+      to {
+        @include transform(scale(1.1) translateY(-3px));
+        box-shadow: 0 5px $dark-blue;
+      }
+    }
+
+    &:hover {
+      animation: grow 0.1s ease-out forwards;
+    }
+
     @include grid-media($mobile-grid) {
       bottom: 50px;
     }
