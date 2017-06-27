@@ -2,7 +2,7 @@ import {
   requestLanguages,
   fetchLanguages,
   receiveLanguages 
-} from '../index'
+} from '../languages'
 
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
