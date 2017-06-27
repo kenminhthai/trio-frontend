@@ -49,6 +49,11 @@
       display: flex;
       align-items: center;
 
+      @include grid-media($mobile-grid) {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
       .btn-post-club {
         font-size: 22px;
         font-weight: 700;
@@ -59,6 +64,10 @@
         text-align: center;
         border-radius: 5px;
         background: $green;
+
+        @include grid-media($mobile-grid) {
+          margin-bottom: 25px;
+        }
       }
 
       .discover-clubs {
