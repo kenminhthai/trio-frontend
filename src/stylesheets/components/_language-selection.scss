@@ -1,0 +1,22 @@
+.language-selection {
+  @include grid-column(11);
+  @include grid-shift(1);
+  min-height: calc(100vh - 140px);
+  background: #fff;
+  padding: 70px 0;
+
+  h1 {
+    font-size: 28px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    color: $black;
+
+    span {
+      font-size: 24px;
+      color: $blue;
+      margin-left: 15px;
+      display: inline-block;
+      cursor: pointer;
+    }
+  }
+}
