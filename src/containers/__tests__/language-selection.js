@@ -30,6 +30,14 @@ describe('LanguageSelection component', () => {
     const wrapper = shallow(<LanguageSelection />)
     expect(wrapper.find('h1').text()).toEqual('To get started, select a language.Or, just browse all clubs')
   })
+
+  it('dispatches fetchLanguages when mounted', () => {
+    const fetchLanguages = jest.fn()
+    const wrapper = shallow(<LanguageSelection fetchLanguages={fetchLanguages} />)
+
+    wrapper.instance().componentDidMount()
+    expect(fetchLanguages.mock.calls.length).toBe(1)
+  })
 })
 
 describe('mapStateToProps', () => {
@@ -47,5 +55,12 @@ describe('mapDispatchToProps', () => {
     const props = mapDispatchToProps(dispatch)
 
     expect(typeof props.selectLanguage).toBe('function')
+  })
+
+  it('maps fetchLanguages to props', () => {
+    const dispatch = jest.fn()
+    const props = mapDispatchToProps(dispatch)
+
+    expect(typeof props.fetchLanguages).toBe('function')
   })
 })

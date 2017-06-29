@@ -1,27 +1,35 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import attention from '../assets/images/characters/attention.svg'
 
 import { bindActionCreators } from 'redux'
 import { selectLanguage } from '../actions/select-language'
+import { fetchLanguages } from '../actions/languages'
 import { connect } from 'react-redux'
 
-export const LanguageSelection = () => {
-  return (
-    <div className="language-selection">
-      <img src={attention} alt="" width="78" height="72" />
+export class LanguageSelection extends PureComponent {
+  componentDidMount() {
+    this.props.fetchLanguages()
+  }
 
-      <h1>
-        To get started, select a language.
-        <span>Or, just browse all clubs</span>
-      </h1>
+  render() {
+    return (
+      <div className="language-selection">
+        <img src={attention} alt="" width="78" height="72" />
 
-      <p>Language list will go here</p>
-    </div>
-  )
+        <h1>
+          To get started, select a language.
+          <span>Or, just browse all clubs</span>
+        </h1>
+
+        <p>Language list will go here</p>
+      </div>
+    )
+  }
 }
 
 LanguageSelection.defaultProps = {
-  languages: []
+  languages: [],
+  fetchLanguages: function() {}
 }
 
 export const mapStateToProps = (state) => {
@@ -31,7 +39,7 @@ export const mapStateToProps = (state) => {
 }
 
 export const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ selectLanguage }, dispatch)
+  return bindActionCreators({ fetchLanguages, selectLanguage }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LanguageSelection)
