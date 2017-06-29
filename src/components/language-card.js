@@ -1,10 +1,10 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const LanguageCard = ({ language }) => {
+const LanguageCard = ({ language, onSelected }) => {
   return (
     <div className="language-card">
-      <article>
+      <article onClick={() => onSelected(language)}>
         <span className="name">{language.name}</span>
         <span className="learners">{language.number_of_learners_decorated}</span>
       </article>
@@ -13,6 +13,7 @@ const LanguageCard = ({ language }) => {
 }
 
 LanguageCard.propTypes = {
+  onSelected: function() {},
   language: PropTypes.object.isRequired
 }
 

@@ -27,4 +27,13 @@ describe('LanguageCard component', () => {
     const wrapper = shallow(<LanguageCard language={language} />)
     expect(wrapper.find('.learners').text()).toBe("25.1M")
   })
+
+  it('dispatches props.onSelected with language when clicked', () => {
+    const onSelected = jest.fn()
+    const wrapper = shallow(<LanguageCard onSelected={onSelected} language={language} />)
+
+    wrapper.find('article').simulate('click')
+    expect(onSelected.mock.calls.length).toBe(1)
+    expect(onSelected.mock.calls[0][0]).toEqual(language)
+  })
 })
