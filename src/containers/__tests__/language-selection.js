@@ -1,10 +1,12 @@
 import React from 'react'
+
 import {
   LanguageSelection,
   mapStateToProps,
   mapDispatchToProps
 } from '../language-selection'
 
+import LanguageList from '../../components/language-list'
 import attention from '../../assets/images/characters/attention.svg'
 
 import { mount, shallow } from 'enzyme'
@@ -37,6 +39,13 @@ describe('LanguageSelection component', () => {
 
     wrapper.instance().componentDidMount()
     expect(fetchLanguages.mock.calls.length).toBe(1)
+  })
+
+  it('renders a LanguageList component and passes down props.languages', () => {
+    const wrapper = shallow(<LanguageSelection languages="langs" />)
+    expect(wrapper.containsMatchingElement(
+      <LanguageList languages="langs" />
+    )).toBe(true)
   })
 })
 

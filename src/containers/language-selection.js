@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import LanguageList from '../components/language-list'
 import attention from '../assets/images/characters/attention.svg'
 
 import { bindActionCreators } from 'redux'
@@ -21,7 +22,7 @@ export class LanguageSelection extends PureComponent {
           <span>Or, just browse all clubs</span>
         </h1>
 
-        <p>Language list will go here</p>
+        <LanguageList languages={this.props.languages} />
       </div>
     )
   }
