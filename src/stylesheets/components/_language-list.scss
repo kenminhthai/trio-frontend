@@ -1,0 +1,4 @@
+.language-list {
+  @include grid-container();
+  @include grid-collapse();
+}

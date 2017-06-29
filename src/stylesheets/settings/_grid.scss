@@ -3,8 +3,7 @@ $neat-grid: (
   columns: 12,
   gutter: 10px,
   direction: ltr,
-  max-width: 1200px,
-  media: 1021px,
+  color: rgba(#00d4ff, 0.25),
 );
 
 // Define a grid for tablets (1020px wide and down)
@@ -12,6 +11,7 @@ $tablet-grid: (
   columns: 12,
   gutter: 10px,
   media: "(max-width: 1020px)",
+  color: rgba(#00d4ff, 0.25),
 );
 
 // Define a grid for mobiles (640px wide and down)
@@ -19,4 +19,5 @@ $mobile-grid: (
   columns: 12,
   gutter: 12px,
   media: "(max-width: 640px)",
+  color: rgba(#00d4ff, 0.25),
 );

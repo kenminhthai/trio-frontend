@@ -1,9 +1,8 @@
 .language-selection {
-  @include grid-column(11);
-  @include grid-shift(1);
+  @extend .wrap;
   min-height: calc(100vh - 140px);
-  background: #fff;
-  padding: 70px 0;
+  padding-top: 70px;
+  padding-bottom: 70px;
 
   h1 {
     font-size: 28px;

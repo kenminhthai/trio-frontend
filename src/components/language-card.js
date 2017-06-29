@@ -4,8 +4,10 @@ import PropTypes from 'prop-types'
 const LanguageCard = ({ language }) => {
   return (
     <div className="language-card">
-      <span className="name">{language.name}</span>
-      <span className="learners">{language.number_of_learners_decorated}</span>
+      <article>
+        <span className="name">{language.name}</span>
+        <span className="learners">{language.number_of_learners_decorated}</span>
+      </article>
     </div>
   )
 }
