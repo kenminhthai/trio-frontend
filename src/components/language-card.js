@@ -1,9 +1,16 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-const LanguageCard = ({ language, onSelected }) => {
+import classnames from 'classnames'
+
+const LanguageCard = ({ language, selected, onSelected }) => {
+  const className = classnames({
+    'language-card': true,
+    'selected': selected
+  })
+
   return (
-    <div className="language-card">
+    <div className={className}>
       <article onClick={() => onSelected(language)}>
         <span className="name">{language.name}</span>
         <span className="learners">{language.number_of_learners_decorated}</span>

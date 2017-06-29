@@ -55,6 +55,11 @@ describe('LanguageSelection component', () => {
     expect(selectLanguage.mock.calls.length).toBe(1)
     expect(selectLanguage.mock.calls[0][0]).toBe('language')
   })
+
+  it('passes down the selected language to LanguageList', () => {
+    const wrapper = shallow(<LanguageSelection selectedLanguage='selected' />)
+    expect(wrapper.find(LanguageList).props().selectedLanguage).toBe('selected')
+  })
 })
 
 describe('mapStateToProps', () => {
@@ -63,6 +68,13 @@ describe('mapStateToProps', () => {
     const props = mapStateToProps(state)
 
     expect(props.languages).toEqual('langs')
+  })
+
+  it('maps state.selectLanguage to props', () => {
+    const state = {selectedLanguage: 'selected language'}
+    const props = mapStateToProps(state)
+
+    expect(props.selectedLanguage).toBe('selected language')
   })
 })
 

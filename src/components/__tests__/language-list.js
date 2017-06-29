@@ -6,8 +6,8 @@ import LanguageCard from '../language-card'
 import { mount, shallow } from 'enzyme'
 
 const languages = [
-  {name: "German", number_of_learners_decorated: "25.1M"},
-  {name: "Italian", number_of_learners_decorated: "30.5M"}
+  {id: 1, name: "German", number_of_learners_decorated: "25.1M"},
+  {id: 2, name: "Italian", number_of_learners_decorated: "30.5M"}
 ]
 
 describe('LanguageList component', () => {
@@ -38,6 +38,14 @@ describe('LanguageList component', () => {
     )).toBe(true)
 
     expect(wrapper.find(LanguageCard).length).toBe(2)
+  })
+
+  it('sets the selected LanguageCard as selected', () => {
+    const selectedLanguage = {name: "German"}
+    const wrapper = shallow(<LanguageList selectedLanguage={selectedLanguage} languages={languages} />)
+
+    expect(wrapper.find(LanguageCard).first().props().selected).toBe(true)
+    expect(wrapper.find(LanguageCard).last().props().selected).toBe(false)
   })
 
   it('dispatches onLanguageSelected when a LanguageCard is selected', () => {

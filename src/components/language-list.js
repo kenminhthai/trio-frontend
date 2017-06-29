@@ -1,14 +1,15 @@
 import React from 'react'
 import LanguageCard from './language-card'
 
-const LanguageList = ({ languages, onLanguageSelected }) => {
+const LanguageList = ({ languages, onLanguageSelected, selectedLanguage }) => {
   return (
     <div className="language-list">
       {
         languages.isFetching
           ? <p>Loading ...</p>
           : languages.map((lang, index) => {
-              return <LanguageCard onSelected={(lang) => onLanguageSelected(lang)} key={index} language={lang} />
+              const selected = lang.name === selectedLanguage.name
+              return <LanguageCard selected={selected} onSelected={(lang) => onLanguageSelected(lang)} key={index} language={lang} />
             })
       }
     </div>
@@ -16,6 +17,7 @@ const LanguageList = ({ languages, onLanguageSelected }) => {
 }
 
 LanguageList.defaultProps = {
+  selectedLanguage: {},
   onLanguageSelected: function() {}
 }
 

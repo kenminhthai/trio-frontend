@@ -18,6 +18,14 @@ describe('LanguageCard component', () => {
     expect(wrapper.hasClass('language-card')).toBe(true)
   })
 
+  it('renders a className of "selected" if props.selected is truthy', () => {
+    let wrapper = shallow(<LanguageCard language={language} />)
+    expect(wrapper.hasClass('selected')).toBe(false)
+
+    wrapper = shallow(<LanguageCard selected={true} language={language} />)
+    expect(wrapper.hasClass('selected')).toBe(true)
+  })
+
   it('renders the language name', () => {
     const wrapper = shallow(<LanguageCard language={language} />)
     expect(wrapper.find('.name').text()).toBe("German")

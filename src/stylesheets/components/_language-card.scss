@@ -1,7 +1,24 @@
 .language-card {
   @include grid-column(4);
+  @include transition(all 0.2s ease 0s);
   margin-bottom: 10px;
   background: #fff;
+
+  &:hover {
+    @include transform(scale(1.01));
+  }
+
+  &.selected {
+    background: $blue;
+
+    article {
+      border-color: $blue;
+
+      span {
+        color: #fff !important;
+      }
+    }
+  }
 
   @include grid-media($tablet-grid) {
     @include grid-column(6);

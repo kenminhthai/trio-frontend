@@ -24,6 +24,7 @@ export class LanguageSelection extends PureComponent {
 
         <LanguageList
           onLanguageSelected={(lang) => this.props.selectLanguage(lang)}
+          selectedLanguage={this.props.selectedLanguage}
           languages={this.props.languages} />
       </div>
     )
@@ -37,7 +38,8 @@ LanguageSelection.defaultProps = {
 
 export const mapStateToProps = (state) => {
   return {
-    languages: state.languages
+    languages: state.languages,
+    selectedLanguage: state.selectedLanguage
   }
 }
 
