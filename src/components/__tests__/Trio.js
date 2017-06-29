@@ -3,13 +3,13 @@ import ReactDOM from 'react-dom'
 import Trio from '../Trio'
 
 import Induction from '../induction'
-import LanguageSelection from '../language-selection'
+import LanguageSelection from '../../containers/language-selection'
 
 import { mount, shallow } from 'enzyme'
 
 describe('Trio component', () => {
-  it('mounts without crashing', () => {
-    expect(mount(<Trio />)).toBeTruthy()
+  it('renders without crashing', () => {
+    expect(shallow(<Trio />)).toBeTruthy()
   })
 
   it('renders with the correct className', () => {

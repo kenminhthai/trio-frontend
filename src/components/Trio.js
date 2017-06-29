@@ -1,6 +1,6 @@
 import React from 'react'
 import Induction from './induction'
-import LanguageSelection from './language-selection'
+import LanguageSelection from '../containers/language-selection'
 
 const Trio = () => {
   return (

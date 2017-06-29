@@ -1,5 +1,10 @@
 import React from 'react'
-import LanguageSelection from '../language-selection'
+import {
+  LanguageSelection,
+  mapStateToProps,
+  mapDispatchToProps
+} from '../language-selection'
+
 import attention from '../../assets/images/characters/attention.svg'
 
 import { mount, shallow } from 'enzyme'
@@ -24,5 +29,23 @@ describe('LanguageSelection component', () => {
   it('renders an instruction header', () => {
     const wrapper = shallow(<LanguageSelection />)
     expect(wrapper.find('h1').text()).toEqual('To get started, select a language.Or, just browse all clubs')
+  })
+})
+
+describe('mapStateToProps', () => {
+  it('maps state.languages to props', () => {
+    const state = {languages: 'langs'}
+    const props = mapStateToProps(state)
+
+    expect(props.languages).toEqual('langs')
+  })
+})
+
+describe('mapDispatchToProps', () => {
+  it('maps selectLanguage to props', () => {
+    const dispatch = jest.fn()
+    const props = mapDispatchToProps(dispatch)
+
+    expect(typeof props.selectLanguage).toBe('function')
   })
 })
