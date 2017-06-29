@@ -43,9 +43,17 @@ describe('LanguageSelection component', () => {
 
   it('renders a LanguageList component and passes down props.languages', () => {
     const wrapper = shallow(<LanguageSelection languages="langs" />)
-    expect(wrapper.containsMatchingElement(
-      <LanguageList languages="langs" />
-    )).toBe(true)
+    expect(wrapper.find(LanguageList).length).toBe(1)
+    expect(wrapper.find(LanguageList).first().props().languages).toBe('langs')
+  })
+
+  it('dispatches selectLanguage when a language is selected in LanguageList', () => {
+    const selectLanguage = jest.fn()
+    const wrapper = shallow(<LanguageSelection selectLanguage={selectLanguage} />)
+
+    wrapper.find(LanguageList).props().onLanguageSelected('language')
+    expect(selectLanguage.mock.calls.length).toBe(1)
+    expect(selectLanguage.mock.calls[0][0]).toBe('language')
   })
 })
 

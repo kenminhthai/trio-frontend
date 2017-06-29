@@ -22,7 +22,9 @@ export class LanguageSelection extends PureComponent {
           <span>Or, just browse all clubs</span>
         </h1>
 
-        <LanguageList languages={this.props.languages} />
+        <LanguageList
+          onLanguageSelected={(lang) => this.props.selectLanguage(lang)}
+          languages={this.props.languages} />
       </div>
     )
   }

@@ -39,4 +39,13 @@ describe('LanguageList component', () => {
 
     expect(wrapper.find(LanguageCard).length).toBe(2)
   })
+
+  it('dispatches onLanguageSelected when a LanguageCard is selected', () => {
+    const onLanguageSelected = jest.fn()
+    const wrapper = shallow(<LanguageList onLanguageSelected={onLanguageSelected} languages={languages} />)
+
+    wrapper.find(LanguageCard).first().props().onSelected('language')
+    expect(onLanguageSelected.mock.calls.length).toBe(1)
+    expect(onLanguageSelected.mock.calls[0][0]).toBe('language')
+  })
 })
