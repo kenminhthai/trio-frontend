@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="733" height="498" viewBox="0 0 733 498">
+  <g fill="none" fill-rule="evenodd" opacity=".26">
+    <g fill="#D8D8D8" transform="translate(0 33)">
+      <rect width="2.146" height="8" x="2.927" rx="1.073"/>
+      <rect width="2.146" height="8" x="2.927" transform="rotate(90 4 4)" rx="1.073"/>
+    </g>
+    <g fill="#D8D8D8" transform="translate(516 463)">
+      <rect width="2.146" height="8" x="2.927" rx="1.073"/>
+      <rect width="2.146" height="8" x="2.927" transform="rotate(90 4 4)" rx="1.073"/>
+    </g>
+    <g fill="#D8D8D8" opacity=".5" transform="translate(359)">
+      <rect width="2.683" height="10" x="3.659" rx="1.341"/>
+      <rect width="2.683" height="10" x="3.659" transform="rotate(90 5 5)" rx="1.341"/>
+    </g>
+    <g fill="#D8D8D8" transform="translate(563 143)">
+      <rect width="1.61" height="6" x="2.195" rx=".805"/>
+      <rect width="1.61" height="6" x="2.195" transform="rotate(90 3 3)" rx=".805"/>
+    </g>
+    <g fill="#D8D8D8" opacity=".5" transform="translate(677 149)">
+      <rect width="2.146" height="8" x="2.927" rx="1.073"/>
+      <rect width="2.146" height="8" x="2.927" transform="rotate(90 4 4)" rx="1.073"/>
+    </g>
+    <g fill="#D8D8D8" opacity=".5" transform="translate(614 281)">
+      <rect width="2.683" height="10" x="3.659" rx="1.341"/>
+      <rect width="2.683" height="10" x="3.659" transform="rotate(90 5 5)" rx="1.341"/>
+    </g>
+    <g fill="#D8D8D8" transform="translate(685 27)">
+      <rect width="1.61" height="6" x="2.195" rx=".805"/>
+      <rect width="1.61" height="6" x="2.195" transform="rotate(90 3 3)" rx=".805"/>
+    </g>
+    <g fill="#D8D8D8" transform="translate(717 490)">
+      <rect width="2.146" height="8" x="2.927" rx="1.073"/>
+      <rect width="2.146" height="8" x="2.927" transform="rotate(90 4 4)" rx="1.073"/>
+    </g>
+    <g fill="#D8D8D8" transform="translate(725 273)">
+      <rect width="2.146" height="8" x="2.927" rx="1.073"/>
+      <rect width="2.146" height="8" x="2.927" transform="rotate(90 4 4)" rx="1.073"/>
+    </g>
+    <g fill="#D8D8D8" transform="translate(566 30)">
+      <rect width="2.146" height="8" x="2.927" rx="1.073"/>
+      <rect width="2.146" height="8" x="2.927" transform="rotate(90 4 4)" rx="1.073"/>
+    </g>
+    <g fill="#D8D8D8" opacity=".463" transform="translate(81 385)">
+      <rect width="5.098" height="19" x="6.951" rx="2.549"/>
+      <rect width="5.098" height="19" x="6.951" transform="rotate(90 9.5 9.5)" rx="2.549"/>
+    </g>
+    <g transform="translate(211 10)">
+      <circle cx="5" cy="5" r="5" fill="#D8D8D8"/>
+      <circle cx="5" cy="5" r="3" fill="#FFFFFF"/>
+    </g>
+    <g transform="translate(624 404)">
+      <circle cx="3" cy="3" r="3" fill="#D8D8D8"/>
+      <circle cx="3" cy="3" r="1.8" fill="#FFFFFF"/>
+    </g>
+    <g transform="translate(379 111)">
+      <circle cx="3" cy="3" r="3" fill="#D8D8D8"/>
+      <circle cx="3" cy="3" r="1.8" fill="#FFFFFF"/>
+    </g>
+    <g transform="translate(515 308)">
+      <circle cx="5" cy="5" r="5" fill="#D8D8D8"/>
+      <circle cx="5" cy="5" r="3" fill="#FFFFFF"/>
+    </g>
+  </g>
+</svg>

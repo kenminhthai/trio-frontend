@@ -11,16 +11,18 @@
 
   article {
     @include grid-container();
-    @include grid-column(10);
+    @include grid-column(7);
     @include grid-shift(1);
     padding-top: 80px;
     position: relative;
     clear: left;
     z-index: 101;
 
-    @include grid-media($mobile-grid) {
-      @include grid-shift(1);
+    @include grid-media($tablet-grid) {
       @include grid-column(10);
+    }
+
+    @include grid-media($mobile-grid) {
       padding-top: 60px;
     }
 
@@ -40,6 +42,16 @@
       max-width: 320px;
       margin-bottom: 60px;
       color: #fff;
+    }
+  }
+
+  .doctor {
+    padding-top: 60px;
+    float: left;
+    min-height: 380px;
+
+    @include grid-media($tablet-grid) {
+      display: none;
     }
   }
 }
