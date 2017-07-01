@@ -3,4 +3,8 @@
   @include grid-collapse();
   @include grid-column(10);
   margin-left: 0;
+
+  @include grid-media($tablet-grid) {
+    @include grid-column(12);
+  }
 }
