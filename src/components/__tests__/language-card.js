@@ -5,6 +5,7 @@ import { mount, shallow } from 'enzyme'
 
 const language = {
   name: "German",
+  language_code: "de",
   number_of_learners_decorated: "25.1M"
 }
 
@@ -16,6 +17,11 @@ describe('LanguageCard component', () => {
   it('renders with the correct className', () => {
     const wrapper = shallow(<LanguageCard language={language} />)
     expect(wrapper.hasClass('language-card')).toBe(true)
+  })
+
+  it('renders the language code as part of the className', () => {
+    const wrapper = shallow(<LanguageCard language={language} />)
+    expect(wrapper.hasClass('de')).toBe(true)
   })
 
   it('renders a className of "selected" if props.selected is truthy', () => {
