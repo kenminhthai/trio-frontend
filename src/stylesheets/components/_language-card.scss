@@ -49,6 +49,10 @@
     }
   }
 
+  @include grid-media($laptop-grid) {
+    @include grid-column(4);
+  }
+
   @include grid-media($tablet-grid) {
     @include grid-column(6);
   }

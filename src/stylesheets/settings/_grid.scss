@@ -6,6 +6,13 @@ $neat-grid: (
   color: rgba(#00d4ff, 0.25),
 );
 
+// Define a grid for laptop'ish sizes (1300px width and down)
+$laptop-grid: (
+  columns: 12,
+  gutter: 10px,
+  media: "(max-width: 1300px)",
+);
+
 // Define a grid for tablets (1020px wide and down)
 $tablet-grid: (
   columns: 12,
