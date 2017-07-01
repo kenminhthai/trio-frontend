@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <circle id="a" cx="22.5" cy="22.5" r="22.5"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="b" fill="white">
+      <use xlink:href="#a"/>
+    </mask>
+    <use fill="#D8D8D8" xlink:href="#a"/>
+    <polygon fill="#D33131" fill-rule="nonzero" points="0 0 45 0 45 45 0 45" mask="url(#b)"/>
+    <path fill="#FFFFFF" fill-rule="nonzero" d="M25.36875,32.0625 C19.6875,32.0625 15.075,27.45 15.075,21.76875 C15.075,16.0875 19.6875,11.475 25.36875,11.475 C27.675,11.475 29.86875,12.2625 31.55625,13.55625 C29.19375,10.74375 25.70625,9 21.76875,9 C14.7375,9 9,14.7375 9,21.76875 C9,28.8 14.7375,34.5375 21.76875,34.5375 C25.70625,34.5375 29.25,32.7375 31.55625,29.98125 C29.86875,31.275 27.73125,32.0625 25.36875,32.0625 Z" mask="url(#b)"/>
+    <polygon fill="#FFFFFF" fill-rule="nonzero" points="34.369 16.875 36.675 20.25 40.612 19.069 38.138 22.331 40.444 25.706 36.619 24.3 34.087 27.563 34.2 23.512 30.375 22.106 34.256 20.981" mask="url(#b)"/>
+  </g>
+</svg>

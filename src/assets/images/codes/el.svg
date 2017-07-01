@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <circle id="a" cx="22.5" cy="22.5" r="22.5"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="b" fill="white">
+      <use xlink:href="#a"/>
+    </mask>
+    <use fill="#D8D8D8" xlink:href="#a"/>
+    <polygon fill="#1CB0F6" fill-rule="nonzero" points="0 0 22.5 0 22.5 22.669 0 22.669" mask="url(#b)"/>
+    <polygon fill="#1CB0F6" fill-rule="nonzero" points="22.778 0 44.833 0 44.833 4.5 22.778 4.5" mask="url(#b)"/>
+    <path fill="#FFFFFF" fill-rule="nonzero" d="M22.4444444,4.5 L44.5,4.5 L44.5,9 L22.4444444,9 L22.4444444,4.5 Z M0,9 L22.4444444,9 L22.4444444,13.5 L0,13.5 L0,9 Z" mask="url(#b)"/>
+    <polygon fill="#FFFFFF" fill-rule="nonzero" points="9.444 0 13.889 0 13.889 22.556 9.444 22.556" mask="url(#b)"/>
+    <polygon fill="#1CB0F6" fill-rule="nonzero" points="22.778 9 44.833 9 44.833 13.5 22.778 13.5" mask="url(#b)"/>
+    <polygon fill="#FFFFFF" fill-rule="nonzero" points="22.444 13.5 44.5 13.5 44.5 18 22.444 18" mask="url(#b)"/>
+    <polygon fill="#1CB0F6" fill-rule="nonzero" points="22.778 18 44.833 18 44.833 22.5 22.778 22.5" mask="url(#b)"/>
+    <polygon fill="#FFFFFF" fill-rule="nonzero" points="0 22.5 44.444 22.5 44.444 27 0 27" mask="url(#b)"/>
+    <polygon fill="#1CB0F6" fill-rule="nonzero" points="0 27 44.444 27 44.444 31.444 0 31.444" mask="url(#b)"/>
+    <polygon fill="#FFFFFF" fill-rule="nonzero" points="0 31.5 44.444 31.5 44.444 35.944 0 35.944" mask="url(#b)"/>
+    <polygon fill="#1CB0F6" fill-rule="nonzero" points="0 36 44.444 36 44.444 40.444 0 40.444" mask="url(#b)"/>
+    <polygon fill="#FFFFFF" fill-rule="nonzero" points="0 40.5 44.444 40.5 44.444 44.944 0 44.944" mask="url(#b)"/>
+  </g>
+</svg>

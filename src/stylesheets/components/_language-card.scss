@@ -2,7 +2,8 @@
   @include grid-column(3);
   @include transition(all 0.1s ease 0s);
   position: relative;
-  margin-bottom: 10px;
+  cursor: pointer;
+  margin-bottom: 20px;
   background: #fff;
 
   &:before {
@@ -19,6 +20,25 @@
   }
 
   &.de { &:before { background: url('assets/images/codes/de.svg') } }
+  &.fr { &:before { background: url('assets/images/codes/fr.svg') } }
+  &.ru { &:before { background: url('assets/images/codes/ru.svg') } }
+  &.it { &:before { background: url('assets/images/codes/it.svg') } }
+  &.ga { &:before { background: url('assets/images/codes/ga.svg') } }
+  &.da { &:before { background: url('assets/images/codes/da.svg') } }
+  &.ro { &:before { background: url('assets/images/codes/ro.svg') } }
+  &.uk { &:before { background: url('assets/images/codes/uk.svg') } }
+  &.eo { &:before { background: url('assets/images/codes/eo.svg') } }
+  &.pl { &:before { background: url('assets/images/codes/pl.svg') } }
+  &.pt { &:before { background: url('assets/images/codes/pt.svg') } }
+  &.sv { &:before { background: url('assets/images/codes/sv.svg') } }
+  &.el { &:before { background: url('assets/images/codes/el.svg') } }
+  &.cy { &:before { background: url('assets/images/codes/cy.svg') } }
+  &.es { &:before { background: url('assets/images/codes/es.svg') } }
+  &.vi { &:before { background: url('assets/images/codes/vi.svg') } }
+  &.he { &:before { background: url('assets/images/codes/he.svg') } }
+  &.tr { &:before { background: url('assets/images/codes/tr.svg') } }
+  &.nl-NL { &:before { background: url('assets/images/codes/nl-NL.svg') } }
+  &.no-BO { &:before { background: url('assets/images/codes/no-BO.svg') } }
 
   &.selected {
     background: $blue;

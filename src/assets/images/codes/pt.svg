@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 45 45" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <circle id="a" cx="22.5" cy="22.5" r="22.5"/>
+  </defs>
+  <g fill="none" fill-rule="evenodd">
+    <mask id="b" fill="white">
+      <use xlink:href="#a"/>
+    </mask>
+    <use fill="#D8D8D8" xlink:href="#a"/>
+    <polygon fill="#7AC70C" fill-rule="nonzero" points="0 0 45 0 45 45 0 45" mask="url(#b)"/>
+    <path fill="#FFCE00" fill-rule="nonzero" d="M43.5125,23.2421875 L22.98125,7.0421875 C22.86875,6.9859375 22.75625,6.9859375 22.64375,7.0421875 L2.1125,23.2421875 C2.05625,23.2984375 2,23.3546875 2,23.4671875 C2,23.5796875 2.05625,23.6359375 2.1125,23.6921875 L22.64375,39.8921875 C22.7,39.9484375 22.75625,39.9484375 22.8125,39.9484375 C22.86875,39.9484375 22.925,39.9484375 22.98125,39.8921875 L43.5125,23.6921875 C43.56875,23.6359375 43.625,23.5796875 43.625,23.4671875 C43.625,23.3546875 43.625,23.2984375 43.5125,23.2421875 Z" mask="url(#b)"/>
+    <circle cx="23.113" cy="22.113" r="9.113" fill="#1CB0F6" fill-rule="nonzero" mask="url(#b)"/>
+    <path fill="#FFFFFF" fill-rule="nonzero" d="M14.28125,20.84375 C14.0976643,21.5606558 14.0032012,22.297468 14,23.0375 C14,23.31875 14,23.65625 14.05625,23.9375 C16.30625,23.375 18.89375,23.0375 21.5375,23.0375 C25.475,23.0375 29.13125,23.76875 32,24.95 C32.1125,24.33125 32.225,23.7125 32.225,23.0375 C32.225,22.64375 32.16875,22.30625 32.16875,21.9125 C29.24375,20.675 25.5875,20 21.5375,20 C18.95,20 16.53125,20.28125 14.28125,20.84375 L14.28125,20.84375 Z" mask="url(#b)"/>
+    <circle cx="25.563" cy="17.563" r="1" fill="#FFFFFF" fill-rule="nonzero" mask="url(#b)"/>
+    <circle cx="16.563" cy="24.563" r="1" fill="#FFFFFF" fill-rule="nonzero" mask="url(#b)"/>
+    <circle cx="20.45" cy="24.45" r="1" fill="#FFFFFF" fill-rule="nonzero" mask="url(#b)"/>
+    <circle cx="18.45" cy="26.45" r="1" fill="#FFFFFF" fill-rule="nonzero" mask="url(#b)"/>
+    <circle cx="27.45" cy="27.45" r="1" fill="#FFFFFF" fill-rule="nonzero" mask="url(#b)"/>
+    <circle cx="28.45" cy="25.45" r="1" fill="#FFFFFF" fill-rule="nonzero" mask="url(#b)"/>
+  </g>
+</svg>
