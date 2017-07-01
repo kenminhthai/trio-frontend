@@ -15,13 +15,13 @@ export class LanguageSelection extends PureComponent {
   renderDoneButton() {
     return this.props.selectedLanguage.name !== undefined
       ? (
-        <button className="btn btn-done" onClick={() => {}}>
+        <button className="btn btn-success btn-done" onClick={() => {}}>
           Done, show me {this.props.selectedLanguage.name} clubs
         </button>
       )
       : (
-        <button className="btn btn-waiting" disabled>
-          Select a Language ...
+        <button className="btn btn-disabled btn-waiting" disabled>
+          Select a language, first.
         </button>
       )
   }

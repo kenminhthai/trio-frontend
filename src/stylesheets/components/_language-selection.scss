@@ -2,7 +2,7 @@
   @extend .wrap;
   min-height: calc(100vh - 140px);
   padding-top: 70px;
-  padding-bottom: 70px;
+  padding-bottom: 100px;
 
   img {
     margin-left: 9px;
@@ -19,5 +19,6 @@
 
   .actions {
     @include grid-column(12);
+    padding-top: 40px;
   }
 }

@@ -1,5 +1,28 @@
 .btn {
+  font-family: 'Open Sans', sans-serif;
+  display: flex;
+  align-items: center;
+  font-size: 18px;
+  font-weight: 700;
+  min-height: 50px;
+  padding: 0 25px;
   border: 0;
   outline: 0;
+  text-align: center;
   cursor: pointer;
+  border-radius: 30px;
+  background: transparent;
+
+  &.btn-success {
+    color: #fff;
+    background: $green;
+  }
+
+  &.btn-disabled {
+    font-weight: 400;
+    color: $grey;
+    cursor: not-allowed;
+    border: solid 1px $grey;
+    background: $light-grey;
+  }
 }

@@ -30,7 +30,7 @@ describe('LanguageSelection component', () => {
 
   it('renders an instruction header', () => {
     const wrapper = shallow(<LanguageSelection />)
-    expect(wrapper.find('h1').text()).toEqual('To get started, select a language.Or, just browse all clubs')
+    expect(wrapper.find('h1').text()).toEqual('To get started, select a language.')
   })
 
   it('dispatches fetchLanguages when mounted', () => {
@@ -73,7 +73,7 @@ describe('LanguageSelection component', () => {
     const wrapper = shallow(<LanguageSelection selectedLanguage={{}} />)
     const waiting = wrapper.find('.btn-waiting')
 
-    expect(waiting.text()).toBe('Select a Language ...')
+    expect(waiting.text()).toBe('Select a language, first.')
     expect(waiting.props().disabled).toBe(true)
     expect(wrapper.find('.btn-done').length).toBe(0)
   })
