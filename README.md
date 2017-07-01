@@ -39,7 +39,7 @@ If you aren't familiar with [Jest](http://facebook.github.io/jest/) or [Enzyme](
 go and have a read.
 
 To test the application and any of your changes, simply run the below command.
-By default Jest will enter Watch mode.
+By default, Jest will enter watch mode.
 ```
 yarn test
 ```
