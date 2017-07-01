@@ -10,14 +10,14 @@ const Induction = () => {
         </h1>
 
         <h2>
-          The easiest way to discover Duolingo Clubs
+          The easiest way to discover and share Duolingo Clubs
         </h2>
 
         <h3>
           We can only support English speakers right now, sorry!
         </h3>
 
-        <div className="btn choose-language">
+        <div className="btn btn-success btn-dropdown choose-language">
           Choose a Language
         </div>
       </article>
