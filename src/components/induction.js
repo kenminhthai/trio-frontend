@@ -1,14 +1,9 @@
 import React from 'react'
 import trioLogo from '../assets/images/brand/trio-logo.svg'
-import duolingoEarth from '../assets/images/duolingo-earth.svg'
 
 const Induction = () => {
   return (
     <div className="induction">
-      <div className="earth">
-        <img src={duolingoEarth} alt="" />
-      </div>
-
       <article>
         <h1>
           <img src={trioLogo} alt="Trio" width="167" />
