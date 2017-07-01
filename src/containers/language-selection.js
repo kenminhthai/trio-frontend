@@ -12,6 +12,20 @@ export class LanguageSelection extends PureComponent {
     this.props.fetchLanguages()
   }
 
+  renderDoneButton() {
+    return this.props.selectedLanguage.name !== undefined
+      ? (
+        <button className="btn btn-done" onClick={() => {}}>
+          Done, show me {this.props.selectedLanguage.name} clubs
+        </button>
+      )
+      : (
+        <button className="btn btn-waiting" disabled>
+          Select a Language ...
+        </button>
+      )
+  }
+
   render() {
     return (
       <div className="language-selection">
@@ -26,6 +40,10 @@ export class LanguageSelection extends PureComponent {
           onLanguageSelected={(lang) => this.props.selectLanguage(lang)}
           selectedLanguage={this.props.selectedLanguage}
           languages={this.props.languages} />
+
+        <div className="actions">
+          {this.renderDoneButton()}
+        </div>
       </div>
     )
   }
@@ -33,6 +51,7 @@ export class LanguageSelection extends PureComponent {
 
 LanguageSelection.defaultProps = {
   languages: [],
+  selectedLanguage: {},
   fetchLanguages: function() {}
 }
 

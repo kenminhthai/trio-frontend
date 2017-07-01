@@ -60,6 +60,23 @@ describe('LanguageSelection component', () => {
     const wrapper = shallow(<LanguageSelection selectedLanguage='selected' />)
     expect(wrapper.find(LanguageList).props().selectedLanguage).toBe('selected')
   })
+
+  it('renders a "Done" button when a language is selected', () => {
+    const wrapper = shallow(<LanguageSelection selectedLanguage={{name: "German"}} />)
+    const done = wrapper.find('.btn-done')
+
+    expect(done.text()).toBe('Done, show me German clubs')
+    expect(wrapper.find('.btn-waiting').length).toBe(0)
+  })
+
+  it('renders a disabled "Select a Language" button when a language is not selected', () => {
+    const wrapper = shallow(<LanguageSelection selectedLanguage={{}} />)
+    const waiting = wrapper.find('.btn-waiting')
+
+    expect(waiting.text()).toBe('Select a Language ...')
+    expect(waiting.props().disabled).toBe(true)
+    expect(wrapper.find('.btn-done').length).toBe(0)
+  })
 })
 
 describe('mapStateToProps', () => {
