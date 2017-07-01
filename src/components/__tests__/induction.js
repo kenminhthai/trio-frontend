@@ -18,7 +18,7 @@ describe('Induction component', () => {
 
   it('renders the elevator pitch', () => {
     const wrapper = shallow(<Induction />)
-    expect(wrapper.find('h2').text()).toEqual("The easiest way to discover Duolingo Clubs")
+    expect(wrapper.find('h2').text()).toEqual("The easiest way to discover and share Duolingo Clubs")
   })
 
   it('renders a notice about only supporting English speakers', () => {
