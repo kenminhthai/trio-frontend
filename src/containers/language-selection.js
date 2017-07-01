@@ -33,7 +33,6 @@ export class LanguageSelection extends PureComponent {
 
         <h1>
           To get started, select a language.
-          <span>Or, just browse all clubs</span>
         </h1>
 
         <LanguageList
