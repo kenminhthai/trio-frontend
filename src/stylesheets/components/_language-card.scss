@@ -27,7 +27,7 @@
   @each $locale in $locales {
     &.#{$locale} {
       &:before {
-        background-image: url('assets/images/codes/#{$locale}.svg'); 
+        background-image: url('assets/images/locales/#{$locale}.svg'); 
       }
     }
   }
