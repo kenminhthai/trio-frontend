@@ -2,23 +2,27 @@
   font-family: 'Open Sans', sans-serif;
   display: inline-block;
   font-size: 18px;
-  font-weight: 700;
+  font-weight: 400;
   min-height: 55px;
   max-height: 55px;
   height: 55px;
-  line-height: 52px;
   padding: 0 25px;
   border: 0;
   outline: 0;
   position: relative;
   text-align: center;
   cursor: pointer;
-  border-radius: 30px;
+  border-radius: 10px;
+  border: solid 2px transparent;
   background: transparent;
 
   &.btn-success {
     color: #fff;
     background: $green;
+
+    &:hover {
+      border: solid 2px $green-complimentary;
+    }
   }
 
   &.btn-dropdown {
@@ -28,7 +32,7 @@
       content: "";
       position: absolute;
       right: 30px;
-      top: 45%;
+      top: 48%;
       width: 12px;
       height: 7px;
       background: url('assets/images/caret-down.svg') center no-repeat;

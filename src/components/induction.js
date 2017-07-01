@@ -17,9 +17,9 @@ const Induction = () => {
           We can only support English speakers right now, sorry!
         </h3>
 
-        <div className="btn btn-success btn-dropdown choose-language">
+        <button className="btn btn-success btn-dropdown choose-language">
           Choose a Language
-        </div>
+        </button>
       </article>
     </div>
   )
