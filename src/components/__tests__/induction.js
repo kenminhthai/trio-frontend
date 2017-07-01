@@ -29,18 +29,8 @@ describe('Induction component', () => {
     expect(wrapper.find('h2').text()).toEqual("The easiest way to discover Duolingo Clubs")
   })
 
-  it('renders a "Post a Club" button', () => {
+  it('renders a notice about only supporting English speakers', () => {
     const wrapper = shallow(<Induction />)
-    expect(wrapper.find('.btn.btn-post-club').text()).toBe("Post a Club")
-  })
-
-  it('renders a "Discover Clubs" button', () => {
-    const wrapper = shallow(<Induction />)
-    expect(wrapper.find('.btn.discover-clubs').text()).toBe("Discover Clubs")
-  })
-
-  it('renders a "Choose a Language" button', () => {
-    const wrapper = shallow(<Induction />)
-    expect(wrapper.find('.btn.choose-language').text()).toBe("Choose a Language")
+    expect(wrapper.find('h3').text()).toEqual("We can only support English speakers right now, sorry!")
   })
 })

@@ -46,86 +46,11 @@
       color: #fff;
     }
 
-    .buttons {
-      display: flex;
-      align-items: center;
-
-      @include grid-media($mobile-grid) {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .btn-post-club {
-        font-size: 22px;
-        font-weight: 700;
-        color: #fff;
-        width: 200px;
-        height: 65px;
-        margin-right: 32px;
-        text-align: center;
-        border-radius: 5px;
-        background: $green;
-
-        @include grid-media($mobile-grid) {
-          margin-bottom: 25px;
-        }
-      }
-
-      .discover-clubs {
-        font-size: 22px;
-        font-weight: 300;
-        color: #fff;
-        border-bottom: solid 1px #fff;
-        padding: 0 0 10px;
-        background: transparent;
-      }
-    }
-  }
-
-  .choose-language {
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    font-weight: 700;
-    color: $blue;
-    max-width: 220px;
-    height: 50px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    margin: auto;
-    bottom: 100px;
-    padding: 0 25px;
-    border-radius: 30px;
-    background: #fff;
-
-    &:after {
-      width: 29px;
-      height: 29px;
-      content: "";
-      position: absolute;
-      top: 11px;
-      right: 25px;
-      border-radius: 50%;
-      background: $blue url('assets/images/caret-down.svg') 50% 12px no-repeat;
-    }
-
-    @keyframes grow {
-      from {
-        @include transform(scale(1));
-      }
-      to {
-        @include transform(scale(1.1) translateY(-3px));
-        box-shadow: 0 5px $dark-blue;
-      }
-    }
-
-    &:hover {
-      animation: grow 0.2s ease forwards;
-    }
-
-    @include grid-media($mobile-grid) {
-      bottom: 50px;
+    h3 {
+      font-family: 'Indie Flower', cursive;
+      font-size: 24px;
+      font-weight: 100;
+      color: #fff;
     }
   }
 }

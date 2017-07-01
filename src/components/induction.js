@@ -18,20 +18,14 @@ const Induction = () => {
           The easiest way to discover Duolingo Clubs
         </h2>
 
-        <div className="buttons">
-          <button className="btn btn-post-club">
-            Post a Club
-          </button>
+        <h3>
+          We can only support English speakers right now, sorry!
+        </h3>
 
-          <button className="btn discover-clubs">
-            Discover Clubs
-          </button>
+        <div className="btn choose-language">
+          Choose a Language
         </div>
       </article>
-
-      <div className="btn choose-language">
-        Choose a Language
-      </div>
     </div>
   )
 }
