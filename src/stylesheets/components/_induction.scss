@@ -46,9 +46,69 @@
   }
 
   .doctor {
-    padding-top: 60px;
     float: left;
-    min-height: 380px;
+    position: relative;
+    margin-top: 60px;
+
+    @keyframes bobble {
+      0% {
+        @include transform(translateY(0))
+      }
+      50% {
+        @include transform(translateY(-15px));
+      }
+      100% {
+        @include transform(translateY(0));
+      }
+    }
+
+    @keyframes drip {
+      from {
+        opacity: 0;
+        transform: translateY(-5px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .bubble {
+      @include animation(drip 0.5s ease forwards, bobble 3s ease infinite);
+      background-repeat: no-repeat;
+      background-position: 0 0;
+      background-size: 100%;
+      background-color: transparent;
+      opacity: 0;
+      position: absolute;
+
+      &.speech1 {
+        @include animation-delay(0.6s, 1.2s);
+        width: 100px;
+        height: 110px;
+        left: 0;
+        top: 87px;
+        background-image: url('assets/images/speech1.svg');
+      }
+
+      &.speech2 {
+        @include animation-delay(0.8s, 2s);
+        width: 66px;
+        height: 77px;
+        left: 140px;
+        top: 60px;
+        background-image: url('assets/images/speech2.svg');
+      }
+
+      &.speech3 {
+        @include animation-delay(1s, 3s);
+        width: 84px;
+        height: 81px;
+        right: 0;
+        top: 110px;
+        background-image: url('assets/images/speech3.svg');
+      }
+    }
 
     @include grid-media($tablet-grid) {
       display: none;

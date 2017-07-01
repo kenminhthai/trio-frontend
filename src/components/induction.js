@@ -25,6 +25,10 @@ const Induction = () => {
         </article>
 
         <div className="doctor">
+          <div className="speech1 bubble" />
+          <div className="speech2 bubble" />
+          <div className="speech3 bubble" />
+
           <img className="doctor" width="330" src={doctor} alt="" />
         </div>
       </div>
