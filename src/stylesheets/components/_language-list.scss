@@ -1,7 +1,7 @@
 .language-list {
   @include grid-container();
   @include grid-collapse();
-  @include grid-column(10);
+  @include grid-column(12);
   margin-left: 0;
   float: none;
 
