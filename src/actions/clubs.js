@@ -13,3 +13,13 @@ export const fetchClubs = () => {
     })
   }
 }
+
+export const fetchLanguageClubs = (language_id) => {
+  return (dispatch) => {
+    dispatch(requestClubs())
+
+    return get(`/languages/${language_id}/clubs`).then((clubs) => {
+      dispatch(receiveClubs(clubs))
+    })
+  }
+}
