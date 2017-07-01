@@ -3,7 +3,7 @@
 This is the React frontend application of https://duolingoclubs.com and serves
 as an interface for users to discover and share their Duolingo clubs
 
-The backend application is an Elixir umbrella which can be [found here](https://github.com/lukerollans/trio)
+The backend application is an Elixir umbrella application which can be [found here](https://github.com/lukerollans/trio)
 
 ## Introduction
 The first thing to consider is that this application was bootsrapped with 
