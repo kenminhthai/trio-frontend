@@ -1,18 +1,35 @@
 .language-card {
   @include grid-column(3);
-  @include transition(all 0.2s ease 0s);
+  @include transition(all 0.1s ease 0s);
+  position: relative;
   margin-bottom: 10px;
   background: #fff;
 
-  &:hover {
-    @include transform(scale(1.01));
+  &:before {
+    content: "";
+    position: absolute;
+    width: 45px;
+    height: 45px;
+    top: 25%;
+    left: 20px;
+    border-radius: 50%;
+    background: #f1f1f1;
+    background-size: 100%;
+    background-position: 0 0;
   }
+
+  &.de { &:before { background: url('assets/images/codes/de.svg') } }
 
   &.selected {
     background: $blue;
 
+    &:before {
+      opacity: 0;
+    }
+
     article {
       border-color: $blue;
+      padding-left: 20px;
 
       span {
         color: #fff !important;
@@ -31,7 +48,7 @@
   article {
     height: 75px;
     max-height: 75px;
-    padding: 0 20px;
+    padding: 0 20px 0 80px;
     display: flex;
     border: solid 2px #E8E8E8;
     align-items: center;
@@ -48,6 +65,7 @@
     span.learners {
       font-size: 20px;
       font-weight: 100;
+      text-align: right;
       color: $black;
     }
   }
