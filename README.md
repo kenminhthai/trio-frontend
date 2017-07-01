@@ -19,7 +19,7 @@ true for really any standalone React application.
 git clone git@github.com:lukerollans/trio-frontend.git
 cd trio-frontend
 
-# Install yarn via NPM
+# Install yarn if you haven't already
 npm install -g yarn
 
 # Install dependencies via yarn
