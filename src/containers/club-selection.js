@@ -4,10 +4,16 @@ import { bindActionCreators } from 'redux'
 import { selectLanguage } from '../actions/select-language'
 import { connect } from 'react-redux'
 
-export const ClubSelection = ({ languages, selectLanguage }) => {
+export const ClubSelection = ({ clubs, selectLanguage }) => {
   return (
     <div className="club-selection">
-      <p>Hi, I'll show you a list of clubs and stuff</p>
+      {
+        clubs.isFetching
+          ? <p>Loading Clubs ...</p>
+          : (
+            <p>List of clubs</p>
+          )
+      }
     </div>
   )
 }

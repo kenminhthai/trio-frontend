@@ -17,6 +17,12 @@ describe('ClubSelection', () => {
     const wrapper = shallow(<ClubSelection />)
     expect(wrapper.hasClass('club-selection')).toBe(true)
   })
+
+  it('renders a loading message if clubs are fetching', () => {
+    const wrapper = shallow(<ClubSelection clubs={{isFetching: true}} />)
+    expect(wrapper.containsMatchingElement(<p>Loading Clubs ...</p>)).toBe(true)
+    expect(wrapper.containsMatchingElement(<p>List of clubs</p>)).toBe(false)
+  })
 })
 
 describe('mapStateToProps', () => {
