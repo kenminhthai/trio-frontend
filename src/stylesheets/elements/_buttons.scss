@@ -2,7 +2,7 @@
   font-family: 'Open Sans', sans-serif;
   display: inline-block;
   font-size: 18px;
-  font-weight: 400;
+  font-weight: 700;
   min-height: 55px;
   max-height: 55px;
   height: 55px;
@@ -12,7 +12,7 @@
   position: relative;
   text-align: center;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 30px;
   border: solid 2px transparent;
   background: transparent;
 
@@ -40,10 +40,8 @@
   }
 
   &.btn-disabled {
-    font-weight: 400;
-    color: $grey;
+    color: #fff;
     cursor: not-allowed;
-    border: solid 1px $grey;
     background: $light-grey;
   }
 }
