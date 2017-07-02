@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import LanguageList from '../language-list'
 import LanguageCard from '../language-card'
 
+import td from 'testdouble'
 import { mount, shallow } from 'enzyme'
 
 const languages = [
@@ -49,11 +50,10 @@ describe('LanguageList component', () => {
   })
 
   it('dispatches onLanguageSelected when a LanguageCard is selected', () => {
-    const onLanguageSelected = jest.fn()
+    const onLanguageSelected = td.function()
     const wrapper = shallow(<LanguageList onLanguageSelected={onLanguageSelected} languages={languages} />)
 
     wrapper.find(LanguageCard).first().props().onSelected('language')
-    expect(onLanguageSelected.mock.calls.length).toBe(1)
-    expect(onLanguageSelected.mock.calls[0][0]).toBe('language')
+    td.verify(onLanguageSelected('language'), {times: 1})
   })
 })

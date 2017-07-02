@@ -1,6 +1,7 @@
 import React from 'react'
 import LanguageCard from '../language-card'
 
+import td from 'testdouble'
 import { mount, shallow } from 'enzyme'
 
 const language = {
@@ -43,11 +44,10 @@ describe('LanguageCard component', () => {
   })
 
   it('dispatches props.onSelected with language when clicked', () => {
-    const onSelected = jest.fn()
+    const onSelected = td.function()
     const wrapper = shallow(<LanguageCard onSelected={onSelected} language={language} />)
 
     wrapper.find('article').simulate('click')
-    expect(onSelected.mock.calls.length).toBe(1)
-    expect(onSelected.mock.calls[0][0]).toEqual(language)
+    td.verify(onSelected(language), {times: 1})
   })
 })

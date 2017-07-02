@@ -9,6 +9,7 @@ import {
 import LanguageList from '../../components/language-list'
 import attention from '../../assets/images/characters/attention.svg'
 
+import td from 'testdouble'
 import { mount, shallow } from 'enzyme'
 
 describe('LanguageSelection component', () => {
@@ -34,11 +35,11 @@ describe('LanguageSelection component', () => {
   })
 
   it('dispatches fetchLanguages when mounted', () => {
-    const fetchLanguages = jest.fn()
+    const fetchLanguages = td.function()
     const wrapper = shallow(<LanguageSelection fetchLanguages={fetchLanguages} />)
 
     wrapper.instance().componentDidMount()
-    expect(fetchLanguages.mock.calls.length).toBe(1)
+    td.verify(fetchLanguages(), {times: 1})
   })
 
   it('renders a LanguageList component and passes down props.languages', () => {
@@ -48,12 +49,11 @@ describe('LanguageSelection component', () => {
   })
 
   it('dispatches selectLanguage when a language is selected in LanguageList', () => {
-    const selectLanguage = jest.fn()
+    const selectLanguage = td.function()
     const wrapper = shallow(<LanguageSelection selectLanguage={selectLanguage} />)
 
     wrapper.find(LanguageList).props().onLanguageSelected('language')
-    expect(selectLanguage.mock.calls.length).toBe(1)
-    expect(selectLanguage.mock.calls[0][0]).toBe('language')
+    td.verify(selectLanguage('language'), {times: 1})
   })
 
   it('passes down the selected language to LanguageList', () => {
