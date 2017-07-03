@@ -1,0 +1,19 @@
+.language-dropdown {
+  display: flex;
+  align-items: center;
+  min-width: 260px;
+  height: 55px;
+  cursor: pointer;
+  border-radius: 30px;
+  border: solid 2px $light-grey;
+
+  .selected-language {
+    font-weight: 700;
+    font-size: 18px;
+    padding-left: 75px;
+  }
+
+  .dropdown {
+    display: none;
+  }
+}
