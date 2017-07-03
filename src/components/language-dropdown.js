@@ -14,7 +14,7 @@ export class LanguageDropdown extends PureComponent {
             this.props.languages.map((lang, index) => {
               const className = classnames({
                 'language': true,
-                'selected': this.props.selectedLanguage.name == lang.name
+                'selected': this.props.selectedLanguage.name === lang.name
               })
 
               return <div key={index} className={className}>{lang.name}</div>

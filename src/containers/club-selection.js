@@ -1,4 +1,4 @@
-import React, { PureComponent } from 'react'
+import React from 'react'
 import ClubList from '../components/club-list'
 import LanguageDropdown from '../components/language-dropdown'
 
