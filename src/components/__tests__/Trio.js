@@ -4,6 +4,7 @@ import Trio from '../Trio'
 
 import Induction from '../induction'
 import LanguageSelection from '../../containers/language-selection'
+import ClubSelection from '../../containers/club-selection'
 
 import { mount, shallow } from 'enzyme'
 
@@ -25,5 +26,10 @@ describe('Trio component', () => {
   it('renders a LanguageSelection component', () => {
     const wrapper = shallow(<Trio />)
     expect(wrapper.find(LanguageSelection).length).toBe(1)
+  })
+
+  it('renders a ClubSelection component', () => {
+    const wrapper = shallow(<Trio />)
+    expect(wrapper.find(ClubSelection).length).toBe(1)
   })
 })
