@@ -10,9 +10,11 @@ export const ClubSelection = ({ clubs, languages, selectLanguage, selectedLangua
   return (
     <div className="club-selection">
       <header>
-        <LanguageDropdown
-          selectedLanguage={selectedLanguage}
-          languages={languages} />
+        <div className="wrap">
+          <LanguageDropdown
+            selectedLanguage={selectedLanguage}
+            languages={languages} />
+        </div>
       </header>
 
       <ClubList clubs={clubs} />
