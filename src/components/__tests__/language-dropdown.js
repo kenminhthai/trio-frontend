@@ -18,9 +18,14 @@ describe('LanguageDropdown', () => {
     expect(wrapper.hasClass('language-dropdown')).toBe(true)
   })
 
+  it('renders "Select a Language" if no language has been selected', () => {
+    const wrapper = shallow(<LanguageDropdown selectedLanguage={{}} />)
+    expect(wrapper.find('.selected-language').text()).toBe('Select a language')
+  })
+
   it('renders the name of the selected language', () => {
     const wrapper = shallow(<LanguageDropdown selectedLanguage={{name: "German"}} />)
-    expect(wrapper.find('.selected').text()).toBe("German")
+    expect(wrapper.find('.selected-language').text()).toBe("German")
   })
 
   it('renders each language on the dropdown', () => {
@@ -30,6 +35,12 @@ describe('LanguageDropdown', () => {
     expect(dropdown.find('.language').length).toBe(2)
     expect(dropdown.containsMatchingElement(<div className="language">German</div>)).toBe(true)
     expect(dropdown.containsMatchingElement(<div className="language">Italian</div>)).toBe(true)
+  })
+
+  it('renders a loading message in the dropdown if languages are fetching', () => {
+    const wrapper = shallow(<LanguageDropdown languages={{isFetching: true}} />)
+    expect(wrapper.find('.dropdown .loading').text()).toBe('Loading ...')
+    expect(wrapper.find('.dropdown').children().length).toBe(1)
   })
 
   it('highlights the selected language in the dropdown', () => {
