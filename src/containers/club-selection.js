@@ -1,4 +1,5 @@
 import React, { PureComponent } from 'react'
+import ClubList from '../components/club-list'
 
 import { bindActionCreators } from 'redux'
 import { selectLanguage } from '../actions/select-language'
@@ -7,20 +8,14 @@ import { connect } from 'react-redux'
 export const ClubSelection = ({ clubs, selectLanguage }) => {
   return (
     <div className="club-selection">
-      {
-        clubs.isFetching
-          ? <p>Loading Clubs ...</p>
-          : (
-            <p>List of clubs</p>
-          )
-      }
+      <ClubList clubs={clubs} />
     </div>
   )
 }
 
 ClubSelection.defaultProps = {
   clubs: [],
-  selectLanguage: {}
+  selectLanguage: function() {}
 }
 
 export const mapStateToProps = (state) => {

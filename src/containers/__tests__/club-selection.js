@@ -5,6 +5,8 @@ import {
   mapDispatchToProps
 } from '../club-selection'
 
+import ClubList from '../../components/club-list'
+
 import td from 'testdouble'
 import { mount, shallow } from 'enzyme'
 
@@ -18,10 +20,10 @@ describe('ClubSelection', () => {
     expect(wrapper.hasClass('club-selection')).toBe(true)
   })
 
-  it('renders a loading message if clubs are fetching', () => {
-    const wrapper = shallow(<ClubSelection clubs={{isFetching: true}} />)
-    expect(wrapper.containsMatchingElement(<p>Loading Clubs ...</p>)).toBe(true)
-    expect(wrapper.containsMatchingElement(<p>List of clubs</p>)).toBe(false)
+  it('renders a ClubList component, passing down props.clubs', () => {
+    const wrapper = shallow(<ClubSelection clubs="clubs" />)
+    expect(wrapper.find(ClubList).length).toBe(1)
+    expect(wrapper.containsMatchingElement(<ClubList clubs="clubs" />)).toBe(true)
   })
 })
 
