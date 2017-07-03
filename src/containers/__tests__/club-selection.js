@@ -6,6 +6,7 @@ import {
 } from '../club-selection'
 
 import ClubList from '../../components/club-list'
+import LanguageDropdown from '../../components/language-dropdown'
 
 import td from 'testdouble'
 import { mount, shallow } from 'enzyme'
@@ -18,6 +19,18 @@ describe('ClubSelection', () => {
   it('renders with the correct className', () => {
     const wrapper = shallow(<ClubSelection />)
     expect(wrapper.hasClass('club-selection')).toBe(true)
+  })
+
+  it('renders a LanguageSelector component, passing down languages', () => {
+    const wrapper = shallow(<ClubSelection languages="languages" />)
+    expect(wrapper.find(LanguageDropdown).length).toBe(1)
+    expect(wrapper.containsMatchingElement(<LanguageDropdown languages="languages" />)).toBe(true)
+  })
+
+  it('renders a LanguageSelector component, passing down selectedLanguage', () => {
+    const wrapper = shallow(<ClubSelection selectedLanguage="selected" />)
+    expect(wrapper.find(LanguageDropdown).length).toBe(1)
+    expect(wrapper.containsMatchingElement(<LanguageDropdown selectedLanguage="selected" />)).toBe(true)
   })
 
   it('renders a ClubList component, passing down props.clubs', () => {
@@ -33,6 +46,20 @@ describe('mapStateToProps', () => {
     const props = mapStateToProps(state)
 
     expect(props.clubs).toBe('clubs')
+  })
+
+  it('maps state.languages to props.languages', () => {
+    const state = {languages: 'languages'}
+    const props = mapStateToProps(state)
+
+    expect(props.languages).toBe('languages')
+  })
+
+  it('maps state.selectedLanguage to props.selectedLanguage', () => {
+    const state = {selectedLanguage: 'selectedLanguage'}
+    const props = mapStateToProps(state)
+
+    expect(props.selectedLanguage).toBe('selectedLanguage')
   })
 })
 
