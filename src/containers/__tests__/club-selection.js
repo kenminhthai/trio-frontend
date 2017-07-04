@@ -33,6 +33,14 @@ describe('ClubSelection', () => {
     expect(wrapper.containsMatchingElement(<LanguageDropdown selectedLanguage="selected" />)).toBe(true)
   })
 
+  it('renders the amount of clubs found', () => {
+    const clubs = ['one', 'two']
+    const selectedLanguage = {name: "German"}
+    const wrapper = shallow(<ClubSelection clubs={clubs} selectedLanguage={selectedLanguage} />)
+
+    expect(wrapper.find('.club-count').text()).toBe('We currently have 2 German clubs')
+  })
+
   it('renders a ClubList component, passing down props.clubs', () => {
     const wrapper = shallow(<ClubSelection clubs="clubs" />)
     expect(wrapper.find(ClubList).length).toBe(1)

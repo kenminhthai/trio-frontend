@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import ClubList from '../components/club-list'
 import LanguageDropdown from '../components/language-dropdown'
 
@@ -6,25 +6,42 @@ import { bindActionCreators } from 'redux'
 import { selectLanguage } from '../actions/select-language'
 import { connect } from 'react-redux'
 
-export const ClubSelection = ({ clubs, languages, selectLanguage, selectedLanguage }) => {
-  return (
-    <div className="club-selection">
-      <header>
-        <div className="wrap">
-          <LanguageDropdown
-            selectedLanguage={selectedLanguage}
-            languages={languages} />
-        </div>
-      </header>
+export class ClubSelection extends PureComponent {
+  renderClubCount() {
+    return (
+      <div className="club-count">
+        We currently have <strong>{this.props.clubs.length}</strong> {this.props.selectedLanguage.name} clubs
+      </div>
+    )
+  }
 
-      <ClubList clubs={clubs} />
-    </div>
-  )
+  render() {
+    return (
+      <div className="club-selection">
+        <header>
+          <div className="wrap">
+            <LanguageDropdown
+              selectedLanguage={this.props.selectedLanguage}
+              languages={this.props.languages} />
+
+            {
+              this.props.clubs.length > 0
+                ? this.renderClubCount()
+                : null
+            }
+          </div>
+        </header>
+
+        <ClubList clubs={this.props.clubs} />
+      </div>
+    )
+  }
 }
 
 ClubSelection.defaultProps = {
   languages: [],
   clubs: [],
+  selectedLanguage: {},
   selectLanguage: function() {}
 }
 
