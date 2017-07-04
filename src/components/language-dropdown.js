@@ -44,7 +44,7 @@ export class LanguageDropdown extends PureComponent {
     })
 
     return (
-      <div className={className}>
+      <div className={className} onClick={() => this.setState({showDropdown: !this.state.showDropdown})}>
         <div className="selected-language">
           {
             this.props.selectedLanguage.name !== undefined

@@ -23,6 +23,17 @@ describe('LanguageDropdown', () => {
     expect(wrapper.state().showDropdown).toBe(false)
   })
 
+  it('toggles state.showDropdown when the root element is clicked', () => {
+    const wrapper = shallow(<LanguageDropdown />)
+    wrapper.setState({showDropdown: false})
+
+    wrapper.simulate('click')
+    expect(wrapper.state().showDropdown).toBe(true)
+
+    wrapper.simulate('click')
+    expect(wrapper.state().showDropdown).toBe(false)
+  })
+
   it('renders the country locale as a class name', () => {
     const language = {name: "German", language_code: "de"}
     const wrapper = shallow(<LanguageDropdown selectedLanguage={language} />)
