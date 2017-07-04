@@ -2,6 +2,14 @@ import React, { PureComponent } from 'react'
 import classnames from 'classnames'
 
 export class LanguageDropdown extends PureComponent {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      showDropdown: false
+    }
+  }
+
   renderLanguageList() {
     return this.props.languages.map((lang, index) => {
       const className = classnames({
@@ -15,6 +23,18 @@ export class LanguageDropdown extends PureComponent {
         </div>
       )
     })
+  }
+
+  renderDropdown() {
+    return (
+      <div className="dropdown">
+        {
+          this.props.languages.isFetching
+            ? <p className="loading">Loading ...</p>
+            : this.renderLanguageList()
+        }
+      </div>
+    )
   }
 
   render() {
@@ -33,13 +53,7 @@ export class LanguageDropdown extends PureComponent {
           }
         </div>
 
-        <div className="dropdown">
-          {
-            this.props.languages.isFetching
-              ? <p className="loading">Loading ...</p>
-              : this.renderLanguageList()
-          }
-        </div>
+        {this.state.showDropdown ? this.renderDropdown() : null}
       </div>
     )
   }

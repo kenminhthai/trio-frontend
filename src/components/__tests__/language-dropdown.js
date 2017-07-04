@@ -18,6 +18,11 @@ describe('LanguageDropdown', () => {
     expect(wrapper.hasClass('language-dropdown')).toBe(true)
   })
 
+  it('sets default state.showDropdown to false', () => {
+    const wrapper = mount(<LanguageDropdown />)
+    expect(wrapper.state().showDropdown).toBe(false)
+  })
+
   it('renders the country locale as a class name', () => {
     const language = {name: "German", language_code: "de"}
     const wrapper = shallow(<LanguageDropdown selectedLanguage={language} />)
@@ -36,8 +41,9 @@ describe('LanguageDropdown', () => {
 
   it('renders each language on the dropdown', () => {
     const wrapper  = shallow(<LanguageDropdown languages={languages} />)
-    const dropdown = wrapper.find('.dropdown')
+    wrapper.setState({showDropdown: true})
 
+    const dropdown = wrapper.find('.dropdown')
     expect(dropdown.find('.language').length).toBe(2)
     expect(dropdown.containsMatchingElement(<div className="language"><span className="de">German</span></div>)).toBe(true)
     expect(dropdown.containsMatchingElement(<div className="language"><span className="it">Italian</span></div>)).toBe(true)
@@ -45,6 +51,8 @@ describe('LanguageDropdown', () => {
 
   it('renders a loading message in the dropdown if languages are fetching', () => {
     const wrapper = shallow(<LanguageDropdown languages={{isFetching: true}} />)
+    wrapper.setState({showDropdown: true})
+
     expect(wrapper.find('.dropdown .loading').text()).toBe('Loading ...')
     expect(wrapper.find('.dropdown').children().length).toBe(1)
   })
@@ -52,6 +60,7 @@ describe('LanguageDropdown', () => {
   it('highlights the selected language in the dropdown', () => {
     const selectedLanguage = {name: "German"}
     const wrapper = shallow(<LanguageDropdown languages={languages} selectedLanguage={selectedLanguage} />)
+    wrapper.setState({showDropdown: true})
 
     expect(wrapper.find('.dropdown .language').first().hasClass('selected')).toBe(true)
     expect(wrapper.find('.dropdown .language').last().hasClass('selected')).toBe(false)
