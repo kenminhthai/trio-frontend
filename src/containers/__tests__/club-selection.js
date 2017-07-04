@@ -47,10 +47,10 @@ describe('ClubSelection', () => {
     expect(wrapper.find('.club-count').text()).toBe('We currently have 2 German clubs')
   })
 
-  it('renders a ClubList component, passing down props.clubs', () => {
-    const wrapper = shallow(<ClubSelection clubs="clubs" />)
+  it('renders a ClubList component, passing down props.clubs and props.selectedLanguage', () => {
+    const wrapper = shallow(<ClubSelection clubs="clubs" selectedLanguage="language" />)
     expect(wrapper.find(ClubList).length).toBe(1)
-    expect(wrapper.containsMatchingElement(<ClubList clubs="clubs" />)).toBe(true)
+    expect(wrapper.containsMatchingElement(<ClubList clubs="clubs" selectedLanguage="language" />)).toBe(true)
   })
 })
 

@@ -33,7 +33,9 @@ export class ClubSelection extends PureComponent {
           </div>
         </header>
 
-        <ClubList clubs={this.props.clubs} />
+        <ClubList
+          selectedLanguage={this.props.selectedLanguage}
+          clubs={this.props.clubs} />
       </div>
     )
   }
