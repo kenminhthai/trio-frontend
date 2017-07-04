@@ -1,5 +1,6 @@
 import React, { PureComponent } from 'react'
 import ClubCard from './club-card'
+import NoClubsNotification from './no-clubs-notification'
 
 export class ClubList extends PureComponent {
   renderLoadingMessage() {
@@ -7,7 +8,7 @@ export class ClubList extends PureComponent {
   }
 
   renderNoClubsMessage() {
-    return <p>No clubs! Sorry guy</p>
+    return <NoClubsNotification selectedLanguage={this.props.selectedLanguage} />
   }
 
   renderClubCards() {

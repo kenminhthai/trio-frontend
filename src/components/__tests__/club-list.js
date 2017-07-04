@@ -1,6 +1,7 @@
 import React from 'react'
 import ClubList from '../club-list'
 import ClubCard from '../club-card'
+import NoClubsNotification from '../no-clubs-notification'
 
 import { mount, shallow } from 'enzyme'
 
@@ -25,10 +26,12 @@ describe('ClubList component', () => {
     expect(wrapper.containsMatchingElement(<p>Loading ...</p>)).toBe(true)
   })
 
-  it('renders a message if no clubs exist', () => {
-    const wrapper = shallow(<ClubList clubs={[]} />)
+  it('renders a NoClubsNotification if no clubs exist', () => {
+    const wrapper = shallow(<ClubList clubs={[]} selectedLanguage="language" />)
     expect(wrapper.find(ClubCard).length).toBe(0)
-    expect(wrapper.containsMatchingElement(<p>No clubs! Sorry guy</p>)).toBe(true)
+    expect(wrapper.containsMatchingElement(
+      <NoClubsNotification selectedLanguage="language" />
+    )).toBe(true)
   })
 
   it('renders a ClubCard for each club in props.club', () => {
