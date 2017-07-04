@@ -1,0 +1,15 @@
+@mixin locale-images {
+  $locales: (
+    'de', 'fr', 'ru', 'it', 'ga', 'da', 'ro', 'uk', 'eo', 'pl', 'pt',
+    'sv', 'el', 'cy', 'es', 'vi', 'he', 'tr', 'nl-NL', 'no-BO'
+  );
+
+  @each $locale in $locales {
+    &.#{$locale} {
+      &:before {
+        background-image: url('assets/images/locales/#{$locale}.svg'); 
+      }
+    }
+  }
+}
+

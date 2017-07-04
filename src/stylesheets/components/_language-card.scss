@@ -1,6 +1,7 @@
 .language-card {
   @include grid-column(3);
   @include transition(all 0.1s ease 0s);
+  @include locale-images();
   position: relative;
   cursor: pointer;
   margin-bottom: 20px;
@@ -17,19 +18,6 @@
     background: #f1f1f1;
     background-size: 100%;
     background-position: 0 0;
-  }
-
-  $locales: (
-    'de', 'fr', 'ru', 'it', 'ga', 'da', 'ro', 'uk', 'eo', 'pl', 'pt',
-    'sv', 'el', 'cy', 'es', 'vi', 'he', 'tr', 'nl-NL', 'no-BO'
-  );
-
-  @each $locale in $locales {
-    &.#{$locale} {
-      &:before {
-        background-image: url('assets/images/locales/#{$locale}.svg'); 
-      }
-    }
   }
 
   &.selected {

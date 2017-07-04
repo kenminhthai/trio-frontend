@@ -4,8 +4,8 @@ import LanguageDropdown from '../language-dropdown'
 import { mount, shallow } from 'enzyme'
 
 const languages = [
-  {name: "German"},
-  {name: "Italian"}
+  {name: "German", language_code: 'de'},
+  {name: "Italian", language_code: 'it'}
 ]
 
 describe('LanguageDropdown', () => {
@@ -16,6 +16,12 @@ describe('LanguageDropdown', () => {
   it('renders with the correct className', () => {
     const wrapper = shallow(<LanguageDropdown />)
     expect(wrapper.hasClass('language-dropdown')).toBe(true)
+  })
+
+  it('renders the country locale as a class name', () => {
+    const language = {name: "German", language_code: "de"}
+    const wrapper = shallow(<LanguageDropdown selectedLanguage={language} />)
+    expect(wrapper.hasClass('de')).toBe(true)
   })
 
   it('renders "Select a Language" if no language has been selected', () => {

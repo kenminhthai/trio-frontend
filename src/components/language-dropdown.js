@@ -14,8 +14,13 @@ export class LanguageDropdown extends PureComponent {
   }
 
   render() {
+    const className = classnames({
+      'language-dropdown': true,
+      [this.props.selectedLanguage.language_code]: true
+    })
+
     return (
-      <div className="language-dropdown">
+      <div className={className}>
         <div className="selected-language">
           {
             this.props.selectedLanguage.name !== undefined
