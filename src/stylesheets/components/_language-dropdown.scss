@@ -31,7 +31,51 @@
     padding-left: 75px;
   }
 
+  @keyframes drip {
+    from {
+      opacity: 0;
+      transform: translateY(-5px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
   .dropdown {
-    display: none;
+    @include animation(drip 0.5s ease forwards);
+    @include animation-delay(0s);
+    position: absolute;
+    left: 0;
+    top: 90px;
+    min-width: 400px;
+    padding: 10px;
+    border: solid 2px $light-grey;
+    background: #fff;
+
+    .language {
+      display: inline-block;
+      padding-left: 15px;
+
+      span {
+        @include locale-images();
+        font-size: 14px;
+        display: block;
+        position: relative;
+        padding: 10px 5px 10px 30px;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: 25%;
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          background: $light-grey;
+          background-size: 100%;
+        }
+      }
+    }
   }
 }

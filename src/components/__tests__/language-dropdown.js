@@ -39,8 +39,8 @@ describe('LanguageDropdown', () => {
     const dropdown = wrapper.find('.dropdown')
 
     expect(dropdown.find('.language').length).toBe(2)
-    expect(dropdown.containsMatchingElement(<div className="language">German</div>)).toBe(true)
-    expect(dropdown.containsMatchingElement(<div className="language">Italian</div>)).toBe(true)
+    expect(dropdown.containsMatchingElement(<div className="language de">German</div>)).toBe(true)
+    expect(dropdown.containsMatchingElement(<div className="language it">Italian</div>)).toBe(true)
   })
 
   it('renders a loading message in the dropdown if languages are fetching', () => {

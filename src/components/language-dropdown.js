@@ -9,7 +9,11 @@ export class LanguageDropdown extends PureComponent {
         'selected': this.props.selectedLanguage.name === lang.name
       })
 
-      return <div key={index} className={className}>{lang.name}</div>
+      return (
+        <div key={index} className={className}>
+          <span className={lang.language_code}>{lang.name}</span>
+        </div>
+      )
     })
   }
 
