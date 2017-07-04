@@ -1,7 +1,6 @@
 .language-dropdown {
   @include locale-images();
-  display: flex;
-  align-items: center;
+  display: inline-block;;
   padding-right: 80px;
   position: relative;
   height: 55px;
@@ -28,7 +27,7 @@
     font-weight: 700;
     font-size: 18px;
     position: relative;
-    top: -1px;
+    top: 14px;
     padding-left: 75px;
   }
 
