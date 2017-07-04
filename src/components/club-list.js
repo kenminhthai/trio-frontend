@@ -1,16 +1,30 @@
-import React from 'react'
+import React, { PureComponent } from 'react'
 import ClubCard from './club-card'
 
-export const ClubList = ({ clubs }) => {
-  return (
-    <div className="club-list">
-      {
-        clubs.isFetching
-          ? <p>Loading ...</p>
-          : clubs.map((club, index) => <ClubCard key={index} club={club} />)
-      }
-    </div>
-  )
+export class ClubList extends PureComponent {
+  renderLoadingMessage() {
+    return <p>Loading ...</p>
+  }
+
+  renderNoClubsMessage() {
+    return <p>No clubs! Sorry guy</p>
+  }
+
+  renderClubCards() {
+    return this.props.clubs.map((club, index) => <ClubCard key={index} club={club} />)
+  }
+
+  render() {
+    return (
+      <div className="club-list">
+        {
+          this.props.clubs.isFetching
+            ? this.renderLoadingMessage()
+            : this.props.clubs.length > 0 ? this.renderClubCards() : this.renderNoClubsMessage()
+        }
+      </div>
+    )
+  }
 }
 
 ClubList.defaultProps = {

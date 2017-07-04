@@ -25,6 +25,12 @@ describe('ClubList component', () => {
     expect(wrapper.containsMatchingElement(<p>Loading ...</p>)).toBe(true)
   })
 
+  it('renders a message if no clubs exist', () => {
+    const wrapper = shallow(<ClubList clubs={[]} />)
+    expect(wrapper.find(ClubCard).length).toBe(0)
+    expect(wrapper.containsMatchingElement(<p>No clubs! Sorry guy</p>)).toBe(true)
+  })
+
   it('renders a ClubCard for each club in props.club', () => {
     const wrapper = shallow(<ClubList clubs={clubs} />)
 
