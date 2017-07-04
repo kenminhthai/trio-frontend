@@ -18,7 +18,7 @@ export class LanguageDropdown extends PureComponent {
       })
 
       return (
-        <div key={index} className={className}>
+        <div key={index} className={className} onClick={() => this.props.selectLanguage(lang)}>
           <span className={lang.language_code}>{lang.name}</span>
         </div>
       )
@@ -61,7 +61,8 @@ export class LanguageDropdown extends PureComponent {
 
 LanguageDropdown.defaultProps = {
   languages: [],
-  selectedLanguage: {}
+  selectedLanguage: {},
+  selectLanguage: function() {}
 }
 
 export default LanguageDropdown

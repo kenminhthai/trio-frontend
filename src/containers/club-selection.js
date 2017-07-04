@@ -21,6 +21,7 @@ export class ClubSelection extends PureComponent {
         <header>
           <div className="wrap">
             <LanguageDropdown
+              selectLanguage={this.props.selectLanguage}
               selectedLanguage={this.props.selectedLanguage}
               languages={this.props.languages} />
 

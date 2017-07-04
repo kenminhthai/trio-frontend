@@ -24,13 +24,19 @@ describe('ClubSelection', () => {
   it('renders a LanguageSelector component, passing down languages', () => {
     const wrapper = shallow(<ClubSelection languages="languages" />)
     expect(wrapper.find(LanguageDropdown).length).toBe(1)
-    expect(wrapper.containsMatchingElement(<LanguageDropdown languages="languages" />)).toBe(true)
+    expect(wrapper.find(LanguageDropdown).props().languages).toBe("languages")
   })
 
   it('renders a LanguageSelector component, passing down selectedLanguage', () => {
     const wrapper = shallow(<ClubSelection selectedLanguage="selected" />)
     expect(wrapper.find(LanguageDropdown).length).toBe(1)
-    expect(wrapper.containsMatchingElement(<LanguageDropdown selectedLanguage="selected" />)).toBe(true)
+    expect(wrapper.find(LanguageDropdown).props().selectedLanguage).toBe("selected")
+  })
+
+  it('renders a LanguageSelector component, passing down selectLanguage', () => {
+    const wrapper = shallow(<ClubSelection selectLanguage="selectLanguage" />)
+    expect(wrapper.find(LanguageDropdown).length).toBe(1)
+    expect(wrapper.containsMatchingElement(<LanguageDropdown selectLanguage="selectLanguage" />)).toBe(true)
   })
 
   it('renders the amount of clubs found', () => {

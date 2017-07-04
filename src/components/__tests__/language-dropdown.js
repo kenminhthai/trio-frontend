@@ -1,6 +1,7 @@
 import React from 'react'
 import LanguageDropdown from '../language-dropdown'
 
+import td from 'testdouble'
 import { mount, shallow } from 'enzyme'
 
 const languages = [
@@ -58,6 +59,15 @@ describe('LanguageDropdown', () => {
     expect(dropdown.find('.language').length).toBe(2)
     expect(dropdown.containsMatchingElement(<div className="language"><span className="de">German</span></div>)).toBe(true)
     expect(dropdown.containsMatchingElement(<div className="language"><span className="it">Italian</span></div>)).toBe(true)
+  })
+
+  it('dispatches props.selectLanguage when a language is clicked', () => {
+    const selectLanguage = td.function()
+    const wrapper = shallow(<LanguageDropdown selectLanguage={selectLanguage} languages={languages} />)
+    wrapper.setState({showDropdown: true})
+
+    wrapper.find('.language').first().simulate('click')
+    td.verify(selectLanguage({name: "German", language_code: "de"}), {times: 1})
   })
 
   it('renders a loading message in the dropdown if languages are fetching', () => {
