@@ -15,7 +15,7 @@ const NoClubsNotification = ({ selectedLanguage }) => {
       </h3>
 
       <button className="btn btn-success">
-        Create a club
+        List your club
       </button>
     </div>
   )

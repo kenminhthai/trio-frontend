@@ -9,6 +9,7 @@
   border: solid 2px $light-grey;
   background: transparent url('assets/images/caret-down-dark.svg') 85% 50%;
   background-repeat: no-repeat;
+  z-index: 101;
 
   &:before {
     content: "";

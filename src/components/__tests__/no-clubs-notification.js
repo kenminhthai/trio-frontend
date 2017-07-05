@@ -32,11 +32,11 @@ describe('NoClubsNotification component', () => {
     expect(wrapper.find('h3').text()).toBe("Why don't you create one!")
   })
 
-  it('renders a "Create a club" button', () => {
+  it('renders a "List your club" button', () => {
     const wrapper = shallow(<NoClubsNotification />)
     expect(wrapper.containsMatchingElement(
       <button className="btn btn-success">
-        Create a club
+        List your club
       </button>
     )).toBe(true)
   })
