@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "classnames": "^2.2.5",
+    "formik": "^0.7.1",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
@@ -12,7 +13,8 @@
     "redux": "^3.7.1",
     "redux-actions": "^2.0.3",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "yup": "^0.21.3"
   },
   "devDependencies": {
     "bourbon": "^4.3.4",

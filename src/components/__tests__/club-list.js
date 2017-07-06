@@ -1,6 +1,7 @@
 import React from 'react'
 import ClubList from '../club-list'
 import ClubCard from '../club-card'
+import ClubCreation from '../club-creation'
 import NoClubsNotification from '../no-clubs-notification'
 
 import { mount, shallow } from 'enzyme'
@@ -18,6 +19,20 @@ describe('ClubList component', () => {
   it('renders with the correct className', () => {
     const wrapper = shallow(<ClubList />)
     expect(wrapper.hasClass('club-list')).toBe(true)
+  })
+
+  it('sets default state.showClubCreation to false', () => {
+    const wrapper = mount(<ClubList />)
+    expect(wrapper.state().showClubCreation).toBe(false)
+  })
+
+  it('renders a ClubCreation component if state.showClubCreation is true', () => {
+    const wrapper = shallow(<ClubList selectedLanguage="language" />)
+    wrapper.setState({showClubCreation: true})
+
+    expect(wrapper.find(ClubCreation).length).toBe(1)
+    expect(wrapper.find(ClubCreation).props().selectedLanguage).toBe("language")
+    expect(wrapper.children().length).toBe(1)
   })
 
   it('renders a loading message if clubs are fetching', () => {

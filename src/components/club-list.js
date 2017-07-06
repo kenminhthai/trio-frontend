@@ -1,8 +1,21 @@
 import React, { PureComponent } from 'react'
 import ClubCard from './club-card'
+import ClubCreation from './club-creation'
 import NoClubsNotification from './no-clubs-notification'
 
 export class ClubList extends PureComponent {
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      showClubCreation: false
+    }
+  }
+
+  renderClubCreation() {
+    return <ClubCreation selectedLanguage={this.props.selectedLanguage} />
+  }
+
   renderLoadingMessage() {
     return <p>Loading ...</p>
   }
@@ -19,9 +32,11 @@ export class ClubList extends PureComponent {
     return (
       <div className="club-list">
         {
-          this.props.clubs.isFetching
-            ? this.renderLoadingMessage()
-            : this.props.clubs.length > 0 ? this.renderClubCards() : this.renderNoClubsMessage()
+          this.state.showClubCreation
+            ? this.renderClubCreation()
+            : this.props.clubs.isFetching
+              ? this.renderLoadingMessage()
+              : this.props.clubs.length > 0 ? this.renderClubCards() : this.renderNoClubsMessage()
         }
       </div>
     )
