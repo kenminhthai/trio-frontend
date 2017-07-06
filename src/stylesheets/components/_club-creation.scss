@@ -1,0 +1,45 @@
+.club-creation {
+  @include grid-container();
+  @extend .wrap;
+  padding-top: 40px;
+  padding-bottom: 40px;
+
+  .introduction {
+    @include grid-column(5);
+    margin-left: 0;
+
+    @include grid-media($mobile-grid) {
+      @include grid-column(12);
+    }
+
+    h1 {
+      font-size: 24px;
+      font-weight: 100;
+      color: #828282;
+    }
+
+    h2 {
+      font-size: 24px;
+      font-weight: 700;
+      color: #828282;
+    }
+
+    span.disclaimer {
+      font-size: 16px;
+      font-weight: 100;
+      display: inline-block;
+      margin-top: 20px;
+      color: #828282;
+    }
+  }
+
+  .form {
+    @include grid-column(5);
+    padding-left: 15px;
+
+    @include grid-media($mobile-grid) {
+      @include grid-column(12);
+    }
+
+  }
+}

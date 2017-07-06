@@ -12,7 +12,7 @@ const ClubCreation = ({ selectedLanguage }) => {
         <h2>Just fill out the fields to the right!</h2>
 
         <span className="disclaimer">
-          Please note, this will <em>not</em> create a club on Duolingo
+          Please note, this will not create a club on Duolingo
         </span>
       </div>
 
