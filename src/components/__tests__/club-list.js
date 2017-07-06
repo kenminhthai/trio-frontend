@@ -44,9 +44,14 @@ describe('ClubList component', () => {
   it('renders a NoClubsNotification if no clubs exist', () => {
     const wrapper = shallow(<ClubList clubs={[]} selectedLanguage="language" />)
     expect(wrapper.find(ClubCard).length).toBe(0)
-    expect(wrapper.containsMatchingElement(
-      <NoClubsNotification selectedLanguage="language" />
-    )).toBe(true)
+    expect(wrapper.find(NoClubsNotification).length).toBe(1)
+    expect(wrapper.find(NoClubsNotification).props().selectedLanguage).toBe("language")
+  })
+
+  it('sets state.showClubCreation to true when "List your club" is clicked in NoClubsNotification', () => {
+    const wrapper = shallow(<ClubList clubs={[]} selectedLanguage="language" />)
+    wrapper.find(NoClubsNotification).props().onListYourClubClicked()
+    expect(wrapper.state().showClubCreation).toBe(true)
   })
 
   it('renders a ClubCard for each club in props.club', () => {

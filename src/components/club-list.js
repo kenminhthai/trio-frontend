@@ -21,7 +21,11 @@ export class ClubList extends PureComponent {
   }
 
   renderNoClubsMessage() {
-    return <NoClubsNotification selectedLanguage={this.props.selectedLanguage} />
+    return (
+      <NoClubsNotification
+        selectedLanguage={this.props.selectedLanguage}
+        onListYourClubClicked={() => this.setState({showClubCreation: true})} />
+    )
   }
 
   renderClubCards() {
