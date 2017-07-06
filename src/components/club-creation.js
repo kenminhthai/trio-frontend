@@ -1,5 +1,4 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import inLove from '../assets/images/characters/inlove.svg'
 import ClubForm from './club-form'
 
