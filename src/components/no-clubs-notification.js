@@ -1,7 +1,7 @@
 import React from 'react'
 import grumpy from '../assets/images/characters/grumpy.svg'
 
-const NoClubsNotification = ({ selectedLanguage }) => {
+const NoClubsNotification = ({ selectedLanguage, onListYourClubClicked }) => {
   return (
     <div className="no-clubs-notification">
       <img src={grumpy} alt="Grumpy" height="72" width="auto" />
@@ -14,7 +14,7 @@ const NoClubsNotification = ({ selectedLanguage }) => {
         Why don't you create one!
       </h3>
 
-      <button className="btn btn-success">
+      <button className="btn btn-success" onClick={onListYourClubClicked}>
         List your club
       </button>
     </div>
@@ -22,6 +22,7 @@ const NoClubsNotification = ({ selectedLanguage }) => {
 }
 
 NoClubsNotification.defaultProps = {
+  onListYourClubClicked: function() {},
   selectedLanguage: {}
 }
 

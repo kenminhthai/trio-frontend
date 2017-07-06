@@ -2,6 +2,7 @@ import React from 'react'
 import NoClubsNotification from '../no-clubs-notification'
 import grumpy from '../../assets/images/characters/grumpy.svg'
 
+import td from 'testdouble'
 import { mount, shallow } from 'enzyme'
 
 describe('NoClubsNotification component', () => {
@@ -39,5 +40,13 @@ describe('NoClubsNotification component', () => {
         List your club
       </button>
     )).toBe(true)
+  })
+
+  it('dispatches props.onListYourClubClicked when "List your club" is clicked', () => {
+    const onListYourClubClicked = td.function()
+    const wrapper = shallow(<NoClubsNotification onListYourClubClicked={onListYourClubClicked} />)
+
+    wrapper.find('.btn').simulate('click')
+    td.verify(onListYourClubClicked(), {times: 1})
   })
 })
