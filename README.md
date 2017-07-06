@@ -1,5 +1,7 @@
 # Trio Frontend
 
+[![Build status](https://badge.buildkite.com/b67fc8b1373e14f69cd7550538e5ae4df56a26a34a49456ac5.svg)](https://buildkite.com/marvellous-mutants/trio-frontend)
+
 This is the React frontend application of https://duolingoclubs.com and serves
 as an interface for users to discover and share their Duolingo clubs
 
