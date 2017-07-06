@@ -8,8 +8,8 @@ const ClubCreation = ({ selectedLanguage }) => {
       <div className="introduction">
         <img src={inLove} alt="In Love" height="72" />
 
-        <h1>List your {selectedLanguage.name} club</h1>
-        <h2>Just fill out the fields to the right!</h2>
+        <h1>So you want to list your {selectedLanguage.name} club, huh?</h1>
+        <h2>Awesome! Do that</h2>
 
         <span className="disclaimer">
           Please note, this will not create a club on Duolingo

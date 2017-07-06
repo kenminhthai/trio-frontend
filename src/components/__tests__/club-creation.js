@@ -24,8 +24,8 @@ describe('ClubCreation', () => {
 
   it('renders appropriate headers', () => {
     const wrapper = shallow(<ClubCreation selectedLanguage={{name: "German"}}/>)
-    expect(wrapper.find('h1').text()).toBe("List your German club")
-    expect(wrapper.find('h2').text()).toBe("Just fill out the fields to the right!")
+    expect(wrapper.find('h1').text()).toBe("So you want to list your German club, huh?")
+    expect(wrapper.find('h2').text()).toBe("Awesome! Do that")
   })
 
   it('renders a small disclaimer', () => {
