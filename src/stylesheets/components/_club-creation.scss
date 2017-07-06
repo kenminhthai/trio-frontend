@@ -12,6 +12,10 @@
       @include grid-column(12);
     }
 
+    img {
+      margin-bottom: 10px;
+    }
+
     h1 {
       font-size: 24px;
       font-weight: 100;
