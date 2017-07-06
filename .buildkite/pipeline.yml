@@ -1,13 +1,5 @@
 steps:
   - name: ":jest: Test"
-    command: "yarn test"
-    env:
-      BUILDKITE_DOCKER_COMPOSE_CONTAINER: "app"
-  - name: ":eslint: Lint Src"
-    command: "./node_modules/.bin/eslint --max-warnings 0 ./src/**.js"
-    env:
-      BUILDKITE_DOCKER_COMPOSE_CONTAINER: "app"
-  - name: ":eslint: Lint Tests"
-    command: "./node_modules/.bin/eslint --max-warnings 0 ./test/**.js"
+    command: "yarn && yarn test"
     env:
       BUILDKITE_DOCKER_COMPOSE_CONTAINER: "app"
