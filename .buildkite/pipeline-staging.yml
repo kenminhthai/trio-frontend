@@ -3,6 +3,9 @@ steps:
     command: "yarn && yarn test"
     env:
       BUILDKITE_DOCKER_COMPOSE_CONTAINER: "app"
+
+  - wait
+
   - name: ":aws: :rocket: Staging"
     command: "yarn && yarn run build && aws s3 sync build/ s3://trio-frontend-staging"
     env:
