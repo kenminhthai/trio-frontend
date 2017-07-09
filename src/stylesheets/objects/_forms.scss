@@ -1,1 +1,29 @@
-form {}
+form {
+  .form-field {
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  label {
+    font-size: 18px;
+    color: #828282;
+    display: block;
+    margin-bottom: 5px;
+  }
+
+  .actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    .btn-submit {
+      margin-right: 20px;
+    }
+
+    .cancel {
+      font-size: 14px;
+      cursor: pointer;
+      color: $red;
+    }
+  }
+}

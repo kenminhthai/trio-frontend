@@ -19,6 +19,14 @@ const ClubForm = (props) => {
           <textarea name="club[description]" placeholder="We live in Perth and we love to practise German!">
           </textarea>
         </div>
+
+        <div className="actions">
+          <button className="btn btn-success btn-submit">
+            List club now!
+          </button>
+
+          <a className="cancel">Cancel</a>
+        </div>
       </form>
     </div>
   )

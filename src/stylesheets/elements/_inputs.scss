@@ -1,1 +1,26 @@
-input {}
+input[type="text"], textarea {
+  font-size: 14px;
+  line-height: 14px;
+  max-height: 45px;
+  height: 45px;
+  color: $grey;
+  outline: 0;
+  padding: 0 15px;
+  border: solid 2px #e8e8e8;
+  border-radius: 5px;
+
+  @include placeholder {
+    color: #DDDDDD;
+  }
+
+  &:focus {
+    border-color: $grey;
+  }
+}
+
+textarea {
+  padding: 15px;
+  min-width: 75%;
+  max-width: 100%;
+  min-height: 100px;
+}
