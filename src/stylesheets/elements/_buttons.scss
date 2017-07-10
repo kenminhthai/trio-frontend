@@ -16,6 +16,11 @@
   border: solid 2px transparent;
   background: transparent;
 
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.2;
+  }
+
   &.btn-success {
     color: #fff;
     background: $green;

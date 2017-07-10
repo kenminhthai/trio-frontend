@@ -8,39 +8,44 @@ describe('ClubForm', () => {
     expect(mount(<ClubForm />)).toBeTruthy()
   })
 
-  it('renders with the correct className', () => {
+  it('renders an input for club Code utilising Formik', () => {
     const wrapper = shallow(<ClubForm />)
-    expect(wrapper.hasClass('club-form')).toBe(true)
+    wrapper.props().setValues({code: "club code"})
+
+    const input = wrapper.dive().find('input[name="code"]')
+    expect(input.props().onChange).toEqual(wrapper.props().handleChange)
+    expect(input.props()).toMatchObject({
+      type: "text",
+      name: "code",
+      value: "club code",
+      placeholder: "XYDZ",
+      required: true
+    })
   })
 
-  it('renders a required field for Club code', () => {
+  it('renders an input for the club Name', () => {
     const wrapper = shallow(<ClubForm />)
-    expect(wrapper.containsMatchingElement(
-      <input
-        type="text"
-        name="club[code]"
-        placeholder="XYDZ"
-        required />
-    )).toBe(true)
+    wrapper.props().setValues({name: "club name"})
+
+    const input = wrapper.dive().find('input[name="name"]')
+    expect(input.props().onChange).toEqual(wrapper.props().handleChange)
+    expect(input.props()).toMatchObject({
+      type: "text",
+      name: "name",
+      value: "club name"
+    })
   })
 
-  it('renders an optional field for Club name', () => {
+  it('renders an input for club Description utilising Formik', () => {
     const wrapper = shallow(<ClubForm />)
-    expect(wrapper.containsMatchingElement(
-      <input
-        type="text"
-        name="club[name]"
-        placeholder="Perth Deutsch" />
-    )).toBe(true)
-  })
+    wrapper.props().setValues({description: "club description"})
 
-  it('renders an optional field for Club description', () => {
-    const wrapper = shallow(<ClubForm />)
-    expect(wrapper.containsMatchingElement(
-      <textarea
-        name="club[description]"
-        placeholder="We live in Perth and we love to practise German!">
-      </textarea>
-    )).toBe(true)
+    const input = wrapper.dive().find('textarea')
+    expect(input.props().onChange).toEqual(wrapper.props().handleChange)
+    expect(input.props()).toMatchObject({
+      name: "description",
+      value: "club description",
+      placeholder: "We live in Perth and we love to practise German!"
+    })
   })
 })
