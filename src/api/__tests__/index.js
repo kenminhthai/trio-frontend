@@ -15,9 +15,7 @@ describe('Trio API client', () => {
         .reply(200, {data: {languages: ["English"]}})
 
       return api.get('/languages').then(
-        (languages) => {
-          expect(languages).toEqual({languages: ["English"]})
-        }
+        languages => expect(languages).toEqual({languages: ["English"]})
       )
     })
   })
@@ -29,9 +27,7 @@ describe('Trio API client', () => {
         .reply(200, {data: "response data!"})
 
       return api.post("/languages/3/clubs", "do a thing!").then(
-        (response) => {
-          expect(response.data).toBe("response data!")
-        }
+        response => expect(response.data).toBe("response data!")
       )
     })
   })
