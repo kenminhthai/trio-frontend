@@ -21,4 +21,18 @@ describe('Trio API client', () => {
       )
     })
   })
+
+  describe('post', () => {
+    it('makes a POST request to the path and returns response parsed as JSON', () => {
+      nock(mockEndpoint)
+        .post('/languages/3/clubs', JSON.stringify("do a thing!"))
+        .reply(200, {data: "response data!"})
+
+      return api.post("/languages/3/clubs", "do a thing!").then(
+        (response) => {
+          expect(response.data).toBe("response data!")
+        }
+      )
+    })
+  })
 })
