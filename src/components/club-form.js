@@ -2,6 +2,8 @@ import React from 'react'
 import { Formik } from 'formik'
 import Yup from 'yup'
 
+import { post } from '../api'
+
 const ClubForm = ({ values, touched, errors, handleChange, handleSubmit, isSubmitting }) => {
   return (
     <form className="club-form" onSubmit={handleSubmit}>
@@ -84,8 +86,18 @@ export default Formik({
     }
   }),
 
-  handleSubmit: (payload, { props, setError, setSubmitting }) => {
-    console.log("Props", props)
-    console.log("Payload", payload)
+  handleSubmit: (payload, { props, setErrors, setSubmitting }) => {
+    return post(`/languages/${props.selectedLanguage.id}/clubs`, payload).then(
+      (response) => {
+        if(response.errors) {
+          setErrors(response.errors)
+        }
+        else {
+          console.log('success')
+        }
+
+        setSubmitting(false)
+      }
+    )
   }
 })(ClubForm)

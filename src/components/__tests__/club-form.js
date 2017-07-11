@@ -1,7 +1,10 @@
 import React from 'react'
 import ClubForm from '../club-form'
 
+import nock from 'nock'
 import { mount, shallow } from 'enzyme'
+
+const mockEndpoint = "https://api.duolingoclubs.com"
 
 describe('ClubForm', () => {
   it('mounts without crashing', () => {
