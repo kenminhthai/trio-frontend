@@ -86,13 +86,14 @@ export const FormikBag = {
     }
   }),
 
-  handleSubmit: (payload, { props, setErrors, setSubmitting }) => {
+  handleSubmit: (payload, { props, setErrors, setSubmitting, resetForm }) => {
     return post(`/languages/${props.selectedLanguage.id}/clubs`, payload).then(
       (response) => {
         if(response.errors) {
           setErrors(response.errors)
         }
         else {
+          resetForm()
           console.log('success')
         }
 

@@ -84,6 +84,7 @@ describe('FormikBag', () => {
   it('handles successful submission responses', () => {
     const setErrors = td.function()
     const setSubmitting = td.function()
+    const resetForm = td.function()
     const payload = {club: {code: 'code', name: 'name', descr: 'descr'}}
     const props = {selectedLanguage: {id: 500}}
 
@@ -91,9 +92,10 @@ describe('FormikBag', () => {
       .post('/languages/500/clubs', payload)
       .reply(200, {data: "success data"})
 
-    return FormikBag.handleSubmit(payload, { props, setErrors, setSubmitting }).then(
+    return FormikBag.handleSubmit(payload, { props, setErrors, setSubmitting, resetForm }).then(
       () => {
         td.verify(setSubmitting(false))
+        td.verify(resetForm())
         td.verify(setErrors(), {times: 0})
         // TODO: When done, test that Redux was told about the new club, too
       }
@@ -103,6 +105,7 @@ describe('FormikBag', () => {
   it('handles erroneous submission responses', () => {
     const setErrors = td.function()
     const setSubmitting = td.function()
+    const resetForm = td.function()
     const payload = {club: {code: 'code', name: 'name', descr: 'descr'}}
     const props = {selectedLanguage: {id: 500}}
 
@@ -113,6 +116,7 @@ describe('FormikBag', () => {
     return FormikBag.handleSubmit(payload, { props, setErrors, setSubmitting }).then(
       () => {
         td.verify(setSubmitting(false))
+        td.verify(resetForm(), {times: 0})
         td.verify(setErrors("error data"))
       }
     )
