@@ -1,7 +1,9 @@
 import React from 'react'
-import ClubForm from '../club-form'
+import ClubForm, { FormikBag } from '../club-form'
+import Yup from 'yup'
 
 import nock from 'nock'
+import td from 'testdouble'
 import { mount, shallow } from 'enzyme'
 
 const mockEndpoint = "https://api.duolingoclubs.com"
@@ -50,5 +52,69 @@ describe('ClubForm', () => {
       value: "club description",
       placeholder: "We live in Perth and we love to practise German!"
     })
+  })
+})
+
+describe('FormikBag', () => {
+  it('sets up the expected validation schema', () => {
+    expect(FormikBag.validationSchema.fields.code._type).toBe("string")
+    expect(FormikBag.validationSchema.fields.name._type).toBe("string")
+    expect(FormikBag.validationSchema.fields.description._type).toBe("string")
+  })
+
+  it('maps props to values all as empty strings', () => {
+    expect(FormikBag.mapPropsToValues({})).toEqual({
+      code: '', name: '', description: ''
+    })
+  })
+
+  it('maps values to a club payload', () => {
+    const values = {code: 'code', name: 'name', description: 'descr'}
+    const payload = FormikBag.mapValuesToPayload(values)
+
+    expect(payload).toEqual({
+      club: {
+        code: 'code',
+        name: 'name',
+        description: 'descr'
+      }
+    })
+  })
+
+  it('handles successful submission responses', () => {
+    const setErrors = td.function()
+    const setSubmitting = td.function()
+    const payload = {club: {code: 'code', name: 'name', descr: 'descr'}}
+    const props = {selectedLanguage: {id: 500}}
+
+    nock(mockEndpoint)
+      .post('/languages/500/clubs', payload)
+      .reply(200, {data: "success data"})
+
+    return FormikBag.handleSubmit(payload, { props, setErrors, setSubmitting }).then(
+      () => {
+        td.verify(setSubmitting(false))
+        td.verify(setErrors(), {times: 0})
+        // TODO: When done, test that Redux was told about the new club, too
+      }
+    )
+  })
+
+  it('handles erroneous submission responses', () => {
+    const setErrors = td.function()
+    const setSubmitting = td.function()
+    const payload = {club: {code: 'code', name: 'name', descr: 'descr'}}
+    const props = {selectedLanguage: {id: 500}}
+
+    nock(mockEndpoint)
+      .post('/languages/500/clubs', payload)
+      .reply(422, {errors: "error data"})
+
+    return FormikBag.handleSubmit(payload, { props, setErrors, setSubmitting }).then(
+      () => {
+        td.verify(setSubmitting(false))
+        td.verify(setErrors("error data"))
+      }
+    )
   })
 })

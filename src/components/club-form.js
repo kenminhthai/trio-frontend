@@ -63,7 +63,7 @@ ClubForm.defaultProps = {
   values: {}
 }
 
-export default Formik({
+export const FormikBag = {
   validationSchema: Yup.object().shape({
     code: Yup.string().required(),
     name: Yup.string(),
@@ -100,4 +100,6 @@ export default Formik({
       }
     )
   }
-})(ClubForm)
+}
+
+export default Formik(FormikBag)(ClubForm)
