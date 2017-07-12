@@ -35,6 +35,14 @@ describe('ClubList component', () => {
     expect(wrapper.children().length).toBe(1)
   })
 
+  it('sets state.showClubCreation to false when ClubCreation is cancelled', () => {
+    const wrapper = shallow(<ClubList />)
+    wrapper.setState({showClubCreation: true})
+
+    wrapper.find(ClubCreation).props().onFormCancelled()
+    expect(wrapper.state().showClubCreation).toBe(false)
+  })
+
   it('renders a loading message if clubs are fetching', () => {
     const wrapper = shallow(<ClubList clubs={{isFetching: true}} />)
     expect(wrapper.find(ClubCard).length).toBe(0)

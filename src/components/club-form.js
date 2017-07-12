@@ -4,7 +4,7 @@ import Yup from 'yup'
 
 import { post } from '../api'
 
-const ClubForm = ({ onClubCreated, onCancelClick, values, touched, errors, handleChange, handleSubmit, isSubmitting }) => {
+const ClubForm = ({ onClubCreated, onCancelClicked, values, touched, errors, handleChange, handleSubmit, isSubmitting }) => {
   return (
     <form className="club-form" onSubmit={handleSubmit}>
       <div className="form-field">
@@ -52,7 +52,7 @@ const ClubForm = ({ onClubCreated, onCancelClick, values, touched, errors, handl
           List club now!
         </button>
 
-        <a onClick={() => onCancelClick()} className="cancel">Cancel</a>
+        <a onClick={() => onCancelClicked()} className="cancel">Cancel</a>
       </div>
     </form>
   )
@@ -61,7 +61,7 @@ const ClubForm = ({ onClubCreated, onCancelClick, values, touched, errors, handl
 ClubForm.defaultProps = {
   errors: {},
   values: {},
-  onCancelClick: function() {},
+  onCancelClicked: function() {},
   onClubCreated: function() {}
 }
 

@@ -13,7 +13,11 @@ export class ClubList extends PureComponent {
   }
 
   renderClubCreation() {
-    return <ClubCreation selectedLanguage={this.props.selectedLanguage} />
+    return (
+      <ClubCreation
+        onFormCancelled={() => this.setState({showClubCreation: false})}
+        selectedLanguage={this.props.selectedLanguage} />
+    )
   }
 
   renderLoadingMessage() {

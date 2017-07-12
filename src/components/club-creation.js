@@ -2,7 +2,7 @@ import React from 'react'
 import inLove from '../assets/images/characters/inlove.svg'
 import ClubForm from './club-form'
 
-const ClubCreation = ({ selectedLanguage }) => {
+const ClubCreation = ({ selectedLanguage, onFormCancelled }) => {
   return (
     <div className="club-creation">
       <div className="introduction">
@@ -17,14 +17,17 @@ const ClubCreation = ({ selectedLanguage }) => {
       </div>
 
       <div className="form">
-        <ClubForm selectedLanguage={selectedLanguage} />
+        <ClubForm
+          onCancelClicked={() => onFormCancelled()}
+          selectedLanguage={selectedLanguage} />
       </div>
     </div>
   )
 }
 
 ClubCreation.defaultProps = {
-  selectedLanguage: {}
+  selectedLanguage: {},
+  onFormCancelled: function() {}
 }
 
 export default ClubCreation

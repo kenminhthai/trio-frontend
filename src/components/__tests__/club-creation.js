@@ -3,6 +3,7 @@ import ClubCreation from '../club-creation'
 import ClubForm from '../club-form'
 import inLove from '../../assets/images/characters/inlove.svg'
 
+import td from 'testdouble'
 import { mount, shallow } from 'enzyme'
 
 describe('ClubCreation', () => {
@@ -38,5 +39,13 @@ describe('ClubCreation', () => {
     expect(wrapper.containsMatchingElement(
       <ClubForm selectedLanguage="language" />
     )).toBe(true)
+  })
+
+  it('dispatches props.onFormCancelled when ClubForm is cancelled', () => {
+    const onFormCancelled = td.function()
+    const wrapper = shallow(<ClubCreation onFormCancelled={onFormCancelled} />)
+
+    wrapper.find(ClubForm).props().onCancelClicked()
+    td.verify(onFormCancelled())
   })
 })

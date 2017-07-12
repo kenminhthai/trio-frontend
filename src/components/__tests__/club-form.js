@@ -54,12 +54,12 @@ describe('ClubForm', () => {
     })
   })
 
-  it('renders a Cancel button that dispatches props.onCancelClick when clicked', () => {
-    const onCancelClick = td.function()
-    const wrapper = shallow(<ClubForm onCancelClick={onCancelClick} />)
+  it('renders a Cancel button that dispatches props.onCancelClicked when clicked', () => {
+    const onCancelClicked = td.function()
+    const wrapper = shallow(<ClubForm onCancelClicked={onCancelClicked} />)
 
     wrapper.dive().find('.actions .cancel').simulate('click')
-    td.verify(onCancelClick())
+    td.verify(onCancelClicked())
   })
 })
 
