@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react'
 import ClubCard from './club-card'
-import ClubCreation from './club-creation'
+import ClubCreation from '../containers/club-creation'
 import NoClubsNotification from './no-clubs-notification'
 
 export class ClubList extends PureComponent {

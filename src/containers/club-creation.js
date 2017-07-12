@@ -1,8 +1,12 @@
 import React from 'react'
 import inLove from '../assets/images/characters/inlove.svg'
-import ClubForm from './club-form'
+import ClubForm from '../components/club-form'
 
-const ClubCreation = ({ selectedLanguage, onFormCancelled }) => {
+import { bindActionCreators } from 'redux'
+import { clubCreated } from '../actions/clubs'
+import { connect } from 'react-redux'
+
+export const ClubCreation = ({ selectedLanguage, onFormCancelled, clubCreated }) => {
   return (
     <div className="club-creation">
       <div className="introduction">
@@ -18,6 +22,7 @@ const ClubCreation = ({ selectedLanguage, onFormCancelled }) => {
 
       <div className="form">
         <ClubForm
+          onClubCreated={(club) => clubCreated(club)}
           onCancelClicked={() => onFormCancelled()}
           selectedLanguage={selectedLanguage} />
       </div>
@@ -25,9 +30,18 @@ const ClubCreation = ({ selectedLanguage, onFormCancelled }) => {
   )
 }
 
+export const mapStateToProps = (state) => {
+  return {}
+}
+
+export const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({ clubCreated }, dispatch)
+}
+
 ClubCreation.defaultProps = {
   selectedLanguage: {},
+  clubCreated: function() {},
   onFormCancelled: function() {}
 }
 
-export default ClubCreation
+export default connect(mapStateToProps, mapDispatchToProps)(ClubCreation)

@@ -1,7 +1,7 @@
 import React from 'react'
 import ClubList from '../club-list'
 import ClubCard from '../club-card'
-import ClubCreation from '../club-creation'
+import ClubCreation from '../../containers/club-creation'
 import NoClubsNotification from '../no-clubs-notification'
 
 import { mount, shallow } from 'enzyme'

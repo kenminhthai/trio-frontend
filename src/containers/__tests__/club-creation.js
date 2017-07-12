@@ -1,16 +1,18 @@
 import React from 'react'
-import ClubCreation from '../club-creation'
-import ClubForm from '../club-form'
+
+import {
+  ClubCreation,
+  mapStateToProps,
+  mapDispatchToProps
+} from '../club-creation'
+
+import ClubForm from '../../components/club-form'
 import inLove from '../../assets/images/characters/inlove.svg'
 
 import td from 'testdouble'
 import { mount, shallow } from 'enzyme'
 
 describe('ClubCreation', () => {
-  it('mounts without crashing', () => {
-    expect(mount(<ClubCreation />)).toBeTruthy()
-  })
-
   it('renders with the correct className', () => {
     const wrapper = shallow(<ClubCreation />)
     expect(wrapper.hasClass('club-creation')).toBe(true)
@@ -47,5 +49,28 @@ describe('ClubCreation', () => {
 
     wrapper.find(ClubForm).props().onCancelClicked()
     td.verify(onFormCancelled())
+  })
+
+  it('dispatches props.clubCreated when ClubForm reports it is so', () => {
+    const clubCreated = td.function()
+    const wrapper = shallow(<ClubCreation clubCreated={clubCreated} />)
+
+    wrapper.find(ClubForm).props().onClubCreated("new club")
+    td.verify(clubCreated("new club"), {times: 1})
+  })
+})
+
+describe('mapStateToProps', () => {
+  it('does not map any state', () => {
+    expect(mapStateToProps({})).toEqual({})
+  })
+})
+
+describe('mapDispatchToProps', () => {
+  it('maps clubCreated to props', () => {
+    const dispatch = jest.fn()
+    const props = mapDispatchToProps(dispatch)
+
+    expect(typeof props.clubCreated).toBe('function')
   })
 })
