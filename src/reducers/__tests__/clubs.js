@@ -24,4 +24,13 @@ describe('clubsReducer', () => {
 
     expect(clubsReducer(state, action)).toEqual("clubs")
   })
+
+  it('adds the action payload to front of state on CLUB_CREATED', () => {
+    const state = ["Existent Club 1", "Existent Club 2"]
+    const action = actions.clubCreated("New Club")
+
+    expect(clubsReducer(state, action)).toEqual([
+      "New Club", "Existent Club 1", "Existent Club 2"
+    ])
+  })
 })

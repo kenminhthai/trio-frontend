@@ -2,7 +2,8 @@ import {
   requestClubs,
   fetchClubs,
   receiveClubs,
-  fetchLanguageClubs
+  fetchLanguageClubs,
+  clubCreated
 } from '../clubs'
 
 import configureMockStore from 'redux-mock-store'
@@ -22,6 +23,13 @@ describe('receiveClubs', () => {
   it('returns a RECEIVE_CLUBS action creator', () => {
     const action = receiveClubs("clubs")
     expect(action).toEqual({type: 'RECEIVE_CLUBS', payload: "clubs"})
+  })
+})
+
+describe('clubCreated', () => {
+  it('returns a CLUB_CREATED action creator', () => {
+    const action = clubCreated("new club")
+    expect(action).toEqual({type: 'CLUB_CREATED', payload: "new club"})
   })
 })
 
