@@ -53,6 +53,14 @@ describe('ClubForm', () => {
       placeholder: "We live in Perth and we love to practise German!"
     })
   })
+
+  it('renders a Cancel button that dispatches props.onCancelClick when clicked', () => {
+    const onCancelClick = td.function()
+    const wrapper = shallow(<ClubForm onCancelClick={onCancelClick} />)
+
+    wrapper.dive().find('.actions .cancel').simulate('click')
+    td.verify(onCancelClick())
+  })
 })
 
 describe('FormikBag', () => {
@@ -85,8 +93,9 @@ describe('FormikBag', () => {
     const setErrors = td.function()
     const setSubmitting = td.function()
     const resetForm = td.function()
+    const onClubCreated = td.function()
     const payload = {club: {code: 'code', name: 'name', descr: 'descr'}}
-    const props = {selectedLanguage: {id: 500}}
+    const props = {onClubCreated: onClubCreated, selectedLanguage: {id: 500}}
 
     nock(mockEndpoint)
       .post('/languages/500/clubs', payload)
@@ -96,6 +105,7 @@ describe('FormikBag', () => {
       () => {
         td.verify(setSubmitting(false))
         td.verify(resetForm())
+        td.verify(onClubCreated("success data"), {times: 1})
         td.verify(setErrors(), {times: 0})
         // TODO: When done, test that Redux was told about the new club, too
       }
