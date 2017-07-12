@@ -3,7 +3,7 @@ import ClubList from '../components/club-list'
 import LanguageDropdown from '../components/language-dropdown'
 
 import { bindActionCreators } from 'redux'
-import { selectLanguage } from '../actions/select-language'
+import { fetchLanguageClubs } from '../actions/clubs'
 import { connect } from 'react-redux'
 
 export class ClubSelection extends PureComponent {
@@ -21,7 +21,7 @@ export class ClubSelection extends PureComponent {
         <header>
           <div className="wrap">
             <LanguageDropdown
-              selectLanguage={this.props.selectLanguage}
+              fetchLanguageClubs={this.props.fetchLanguageClubs}
               selectedLanguage={this.props.selectedLanguage}
               languages={this.props.languages} />
 
@@ -45,7 +45,7 @@ ClubSelection.defaultProps = {
   languages: [],
   clubs: [],
   selectedLanguage: {},
-  selectLanguage: function() {}
+  fetchLanguageClubs: function() {}
 }
 
 export const mapStateToProps = (state) => {
@@ -57,7 +57,7 @@ export const mapStateToProps = (state) => {
 }
 
 export const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ selectLanguage }, dispatch)
+  return bindActionCreators({ fetchLanguageClubs }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ClubSelection)

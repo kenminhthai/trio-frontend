@@ -58,9 +58,10 @@ describe('fetchLanguageClubs', () => {
       .get('/languages/50/clubs')
       .reply(200, {data: {clubs: ["Super Club"]}})
 
-    return store.dispatch(fetchLanguageClubs(50)).then(
+    return store.dispatch(fetchLanguageClubs({id: 50})).then(
       () => {
         expect(store.getActions()).toEqual([
+          {type: 'SELECT_LANGUAGE', payload: {id: 50}},
           {type: 'REQUEST_CLUBS'},
           {type: 'RECEIVE_CLUBS', payload: {clubs: ["Super Club"]}}
         ])

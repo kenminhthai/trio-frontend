@@ -1,4 +1,5 @@
 import { get } from '../api'
+import { selectLanguage } from './select-language'
 import { createAction } from 'redux-actions'
 
 export const requestClubs = createAction('REQUEST_CLUBS')
@@ -16,11 +17,12 @@ export const fetchClubs = () => {
   }
 }
 
-export const fetchLanguageClubs = (language_id) => {
+export const fetchLanguageClubs = (language) => {
   return (dispatch) => {
+    dispatch(selectLanguage(language))
     dispatch(requestClubs())
 
-    return get(`/languages/${language_id}/clubs`).then((clubs) => {
+    return get(`/languages/${language.id}/clubs`).then((clubs) => {
       dispatch(receiveClubs(clubs))
     })
   }

@@ -3,7 +3,7 @@ import LanguageList from '../components/language-list'
 import attention from '../assets/images/characters/attention.svg'
 
 import { bindActionCreators } from 'redux'
-import { selectLanguage } from '../actions/select-language'
+import { fetchLanguageClubs } from '../actions/clubs'
 import { fetchLanguages } from '../actions/languages'
 import { connect } from 'react-redux'
 
@@ -36,7 +36,7 @@ export class LanguageSelection extends PureComponent {
         </h1>
 
         <LanguageList
-          onLanguageSelected={(lang) => this.props.selectLanguage(lang)}
+          onLanguageSelected={(lang) => this.props.fetchLanguageClubs(lang)}
           selectedLanguage={this.props.selectedLanguage}
           languages={this.props.languages} />
 
@@ -51,7 +51,8 @@ export class LanguageSelection extends PureComponent {
 LanguageSelection.defaultProps = {
   languages: [],
   selectedLanguage: {},
-  fetchLanguages: function() {}
+  fetchLanguages: function() {},
+  fetchLanguageClubs: function() {}
 }
 
 export const mapStateToProps = (state) => {
@@ -62,7 +63,7 @@ export const mapStateToProps = (state) => {
 }
 
 export const mapDispatchToProps = (dispatch) => {
-  return bindActionCreators({ fetchLanguages, selectLanguage }, dispatch)
+  return bindActionCreators({ fetchLanguages, fetchLanguageClubs }, dispatch)
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(LanguageSelection)
