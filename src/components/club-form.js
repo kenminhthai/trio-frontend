@@ -94,7 +94,6 @@ export const FormikBag = {
         }
         else {
           resetForm()
-          console.log('success')
         }
 
         setSubmitting(false)
