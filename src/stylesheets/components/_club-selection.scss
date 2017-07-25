@@ -2,14 +2,13 @@
   min-height: 100vh;
 
   > header {
-    padding: 15px;
     box-shadow: 0 2px 4px rgba(0,0,0,0.05);
 
     .wrap {
+      padding: 15px 40px;
       display: flex;
       align-items: center;
       justify-content: flex-start;
-      width: 100%;
 
       .language-dropdown {
         margin-right: 30px;
